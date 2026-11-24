@@ -91,9 +91,13 @@ sources:
     url: https://www.ura.gov.sg/news/media/pr25-64/
     sha256: 12850759b7a480830b9ce866ec89f253d8a60c19b31ade47ac1ebe3295a9e357
   D1:
-    title: Dataset descriptions on data.gov.sg (metadata API) for the layers in data/manifest.json
-    publisher: data.gov.sg (Open Government Products) for URA and SLA
-    url: https://data.gov.sg/datasets/d_e7395d743076a2bcc487b0d12b9bf33b/view
+    title: Description of the SLA Cadastral Land Parcel dataset (data.gov.sg metadata service)
+    publisher: data.gov.sg, for the Singapore Land Authority
+    url: https://api-production.data.gov.sg/v2/public/api/datasets/d_e7395d743076a2bcc487b0d12b9bf33b/metadata
+  D2:
+    title: Description of the Amendment to Master Plan 2025 Land Use Layer dataset (data.gov.sg metadata service)
+    publisher: data.gov.sg, for the Urban Redevelopment Authority
+    url: https://api-production.data.gov.sg/v2/public/api/datasets/d_7a03324bed531cdff76a16239b0e84e1/metadata
 
 facts:
   # --- Land Acquisition Act essentials -------------------------------------------------------------
@@ -255,10 +259,10 @@ facts:
     basis: document text
   - id: F19
     topic: Railway protection
-    claim: Near underground railway structures, piling is not allowed in the first reserve and elsewhere in the zone must be kept at least 6 m clear on plan.
+    claim: For underground railway structures, the Code's piling table marks the first reserve "Not allowed", with listed exceptions (for example piles 3 to 6 m from the structure) that may be considered case by case.
     source: T1
-    locator: Table 3 (piling and drilling), p.79
-    quote: "Allowed if piles are kept at least 6m clear on plan from the exterior edge of rapid transit system structures."
+    locator: Table 3 (piling works) and its note, printed p.79
+    quote: "The following may be considered on case-by-case basis."
     status: VERIFIED
     basis: document text
   - id: F20
@@ -363,18 +367,18 @@ facts:
     basis: document text
   - id: F31
     topic: Master Plan
-    claim: The Master Plan 2025 was gazetted on 1 December 2025.
+    claim: The Master Plan 2025 was gazetted on 1 December 2025, and URA adopts it as Singapore's official land use plan.
     source: U2
     locator: first paragraph
-    quote: "The Master Plan 2025 (MP2025) is officially gazetted today."
+    quote: "With the gazette, URA will formally adopt MP2025 as Singapore’s official land use plan"
     status: VERIFIED
     basis: page text (dated 1 December 2025)
   # --- Data ---------------------------------------------------------------------------------------------
   - id: F32
     topic: Data
-    claim: URA describes its Master Plan layers on data.gov.sg as indicative, including the land-use zoning and the rail line alignments.
-    source: D1
-    locator: dataset descriptions (metadata API) of d_7a03324bed531cdff76a16239b0e84e1 and d_6615da031916f656152eafa013748d73
+    claim: URA describes its Master Plan land-use layer on data.gov.sg as indicative (its rail line layer is described the same way, "Indicative alignment").
+    source: D2
+    locator: dataset description; rail line layer d_6615da031916f656152eafa013748d73 likewise
     quote: "Indicative land use zoning layer."
     status: VERIFIED
     basis: metadata text

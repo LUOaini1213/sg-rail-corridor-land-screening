@@ -80,7 +80,6 @@
     ]
   },
   "webmap": {
-    "bytes": 1285625,
     "geojson_layers": 15,
     "layers": {
       "A": {

@@ -83,7 +83,10 @@ def test_fictional_alignments_follow_no_master_plan_rail_line(run, study):
 
 @pytest.mark.golden
 def test_committed_screening_results_match_a_fresh_run(run):
+    import sys
+    sys.path.insert(0, str(config.ROOT / "scripts"))
+    from check_results import close        # numbers compared with a small tolerance (platform differences)
     _, summary, _ = run
     committed = json.loads((config.RESULTS / "screening.json").read_text(encoding="utf-8"))["variants"]
     fresh = json.loads(json.dumps(pipeline._round(summary), sort_keys=True))
-    assert fresh == committed
+    assert close(fresh, committed) == []

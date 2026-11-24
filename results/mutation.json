@@ -1,0 +1,813 @@
+{
+  "equivalent_reasons": {},
+  "final": {
+    "equivalent": 0,
+    "killed": 57,
+    "mutants": [
+      {
+        "bug": "bearing measured from east, anticlockwise",
+        "file": "corridor/geometry.py",
+        "first_failing_test": "tests/test_geometry.py::test_bearing_is_clockwise_from_north_and_wrap_is_signed",
+        "id": "G01",
+        "status": "killed"
+      },
+      {
+        "bug": "tangent length uses the full deflection",
+        "file": "corridor/geometry.py",
+        "first_failing_test": "tests/test_geometry.py::test_right_angle_right_turn_hand_values",
+        "id": "G02",
+        "status": "killed"
+      },
+      {
+        "bug": "arc centre on the wrong side",
+        "file": "corridor/geometry.py",
+        "first_failing_test": "tests/test_geometry.py::test_right_angle_right_turn_hand_values",
+        "id": "G03",
+        "status": "killed"
+      },
+      {
+        "bug": "arc length halved",
+        "file": "corridor/geometry.py",
+        "first_failing_test": "tests/test_geometry.py::test_right_angle_right_turn_hand_values",
+        "id": "G04",
+        "status": "killed"
+      },
+      {
+        "bug": "arc swept the wrong way",
+        "file": "corridor/geometry.py",
+        "first_failing_test": "tests/test_geometry.py::test_right_angle_right_turn_hand_values",
+        "id": "G05",
+        "status": "killed"
+      },
+      {
+        "bug": "overlapping arcs accepted",
+        "file": "corridor/geometry.py",
+        "first_failing_test": "tests/test_geometry.py::test_pis_too_close_for_the_radius_are_rejected",
+        "id": "G06",
+        "status": "killed"
+      },
+      {
+        "bug": "rectangle built with a wrong normal",
+        "file": "corridor/geometry.py",
+        "first_failing_test": "tests/test_geometry.py::test_rectangle_dimensions_and_orientation",
+        "id": "G07",
+        "status": "killed"
+      },
+      {
+        "bug": "north box placed beyond the end of the alignment",
+        "file": "corridor/geometry.py",
+        "first_failing_test": "tests/test_geometry.py::test_station_boxes_on_a_straight_alignment",
+        "id": "G08",
+        "status": "killed"
+      },
+      {
+        "bug": "tunnel footprint with round ends overlapping the boxes",
+        "file": "corridor/geometry.py",
+        "first_failing_test": "tests/test_geometry.py::test_tunnel_footprint_area_is_width_times_centre_line_length",
+        "id": "G09",
+        "status": "killed"
+      },
+      {
+        "bug": "worksite set off from the box",
+        "file": "corridor/geometry.py",
+        "first_failing_test": "tests/test_geometry.py::test_worksite_sits_beside_the_box_on_the_requested_side",
+        "id": "G10",
+        "status": "killed"
+      },
+      {
+        "bug": "worksite on the opposite side",
+        "file": "corridor/geometry.py",
+        "first_failing_test": "tests/test_geometry.py::test_worksite_sits_beside_the_box_on_the_requested_side",
+        "id": "G11",
+        "status": "killed"
+      },
+      {
+        "bug": "twin-tube width double-counts a diameter",
+        "file": "corridor/geometry.py",
+        "first_failing_test": "tests/test_geometry.py::test_twin_tube_outer_width",
+        "id": "G12",
+        "status": "killed"
+      },
+      {
+        "bug": "deflection angle not wrapped",
+        "file": "corridor/geometry.py",
+        "first_failing_test": "tests/test_geometry.py::test_bearing_is_clockwise_from_north_and_wrap_is_signed",
+        "id": "G13",
+        "status": "killed"
+      },
+      {
+        "bug": "end straight measured from the wrong arc end",
+        "file": "corridor/geometry.py",
+        "first_failing_test": "tests/test_geometry.py::test_general_deflection_length_formula",
+        "id": "G14",
+        "status": "killed"
+      },
+      {
+        "bug": "tunnel footprint runs under the boxes",
+        "file": "corridor/components.py",
+        "first_failing_test": "tests/test_geometry.py::test_variants_in_the_inputs_build_with_the_stated_sizes",
+        "id": "C01",
+        "status": "killed"
+      },
+      {
+        "bug": "stratum bottom above its top",
+        "file": "corridor/components.py",
+        "first_failing_test": "tests/test_landdb.py::test_a_clean_database_passes_every_rule",
+        "id": "C02",
+        "status": "killed"
+      },
+      {
+        "bug": "worksites counted as railway structure",
+        "file": "corridor/components.py",
+        "first_failing_test": "tests/test_round2.py::test_railway_structure_is_the_permanent_components_only",
+        "id": "C03",
+        "status": "killed"
+      },
+      {
+        "bug": "protection zone read from the safety-zone fact",
+        "file": "corridor/screening.py",
+        "first_failing_test": "tests/test_screening.py::test_zone_distances_are_the_verified_fact_values",
+        "id": "Z01",
+        "status": "killed"
+      },
+      {
+        "bug": "protection ring overlaps the first reserve",
+        "file": "corridor/screening.py",
+        "first_failing_test": "tests/test_screening.py::test_zone_rings_have_the_hand_computed_areas",
+        "id": "Z02",
+        "status": "killed"
+      },
+      {
+        "bug": "first reserve includes the structure itself",
+        "file": "corridor/screening.py",
+        "first_failing_test": "tests/test_screening.py::test_zone_rings_have_the_hand_computed_areas",
+        "id": "Z03",
+        "status": "killed"
+      },
+      {
+        "bug": "interfaces within 40 m reported as first reserve",
+        "file": "corridor/screening.py",
+        "first_failing_test": "tests/test_screening.py::test_existing_railway_zone_classification",
+        "id": "Z04",
+        "status": "killed"
+      },
+      {
+        "bug": "default ownership depth sign flipped",
+        "file": "corridor/screening.py",
+        "first_failing_test": "tests/test_landdb.py::test_interests_and_steps_follow_the_instruments",
+        "id": "Z05",
+        "status": "killed"
+      },
+      {
+        "bug": "stratum rule inverted",
+        "file": "corridor/screening.py",
+        "first_failing_test": "tests/test_landdb.py::test_interests_and_steps_follow_the_instruments",
+        "id": "Z06",
+        "status": "killed"
+      },
+      {
+        "bug": "TOL and s.42 swapped",
+        "file": "corridor/screening.py",
+        "first_failing_test": "tests/test_landdb.py::test_a_clean_database_passes_every_rule",
+        "id": "Z07",
+        "status": "killed"
+      },
+      {
+        "bug": "slivers counted as land take",
+        "file": "corridor/screening.py",
+        "first_failing_test": "tests/test_screening.py::test_slivers_are_kept_out_of_the_take_but_in_the_accounting",
+        "id": "A01",
+        "status": "killed"
+      },
+      {
+        "bug": "slivers left out of the accounting",
+        "file": "corridor/screening.py",
+        "first_failing_test": "tests/test_screening.py::test_slivers_are_kept_out_of_the_take_but_in_the_accounting",
+        "id": "A02",
+        "status": "killed"
+      },
+      {
+        "bug": "sliver area not summed",
+        "file": "corridor/screening.py",
+        "first_failing_test": "tests/test_screening.py::test_slivers_are_kept_out_of_the_take_but_in_the_accounting",
+        "id": "A03",
+        "status": "killed"
+      },
+      {
+        "bug": "every lot shown as State land",
+        "file": "corridor/screening.py",
+        "first_failing_test": "tests/test_landdb.py::test_interests_and_steps_follow_the_instruments",
+        "id": "A04",
+        "status": "killed"
+      },
+      {
+        "bug": "dominant zone is the smallest share",
+        "file": "corridor/screening.py",
+        "first_failing_test": "tests/test_screening.py::test_lot_attributes_dominant_use_and_state_land",
+        "id": "A05",
+        "status": "killed"
+      },
+      {
+        "bug": "buildings touching by a sliver counted",
+        "file": "corridor/screening.py",
+        "first_failing_test": "tests/test_screening.py::test_buildings_need_a_square_metre_inside_and_roofs_can_be_left_out",
+        "id": "A06",
+        "status": "killed"
+      },
+      {
+        "bug": "lots only near the works counted as in scope",
+        "file": "corridor/screening.py",
+        "first_failing_test": "tests/test_outputs.py::test_workbook_written_now_matches_python",
+        "id": "A07",
+        "status": "killed"
+      },
+      {
+        "bug": "area outside the lots ignored",
+        "file": "corridor/screening.py",
+        "first_failing_test": "tests/test_screening.py::test_area_is_conserved_with_part_outside_the_lots",
+        "id": "A08",
+        "status": "killed"
+      },
+      {
+        "bug": "buildings of earlier pieces in a lot forgotten",
+        "file": "corridor/screening.py",
+        "first_failing_test": "tests/test_round2.py::test_buildings_by_lot_counts_each_building_once_per_lot",
+        "id": "A09",
+        "status": "killed"
+      },
+      {
+        "bug": "one building too many per lot",
+        "file": "corridor/screening.py",
+        "first_failing_test": "tests/test_round2.py::test_buildings_by_lot_counts_each_building_once_per_lot",
+        "id": "A10",
+        "status": "killed"
+      },
+      {
+        "bug": "score direction reversed",
+        "file": "corridor/options.py",
+        "first_failing_test": "tests/test_options.py::test_min_max_scores_and_non_discriminating_criteria",
+        "id": "S01",
+        "status": "killed"
+      },
+      {
+        "bug": "ties score zero",
+        "file": "corridor/options.py",
+        "first_failing_test": "tests/test_options.py::test_min_max_scores_and_non_discriminating_criteria",
+        "id": "S02",
+        "status": "killed"
+      },
+      {
+        "bug": "weights not renormalised",
+        "file": "corridor/options.py",
+        "first_failing_test": "tests/test_options.py::test_weights_are_renormalised_and_must_be_valid",
+        "id": "S03",
+        "status": "killed"
+      },
+      {
+        "bug": "ranking from worst",
+        "file": "corridor/options.py",
+        "first_failing_test": "tests/test_options.py::test_rank_breaks_ties_by_variant_key",
+        "id": "S04",
+        "status": "killed"
+      },
+      {
+        "bug": "tie tolerance below the best",
+        "file": "corridor/options.py",
+        "first_failing_test": "tests/test_options.py::test_snap_ties_treats_near_best_values_as_best",
+        "id": "S05",
+        "status": "killed"
+      },
+      {
+        "bug": "one-at-a-time sets the weight instead of scaling it",
+        "file": "corridor/options.py",
+        "first_failing_test": "tests/test_round2.py::test_one_at_a_time_scales_the_weight",
+        "id": "S06",
+        "status": "killed"
+      },
+      {
+        "bug": "leave-one-out keeps the criterion",
+        "file": "corridor/options.py",
+        "first_failing_test": "tests/test_round2.py::test_leave_one_out_drops_the_criterion",
+        "id": "S07",
+        "status": "killed"
+      },
+      {
+        "bug": "random weights count the last place",
+        "file": "corridor/options.py",
+        "first_failing_test": "tests/test_round2.py::test_random_weights_count_the_winner",
+        "id": "S08",
+        "status": "killed"
+      },
+      {
+        "bug": "in and out of scope swapped",
+        "file": "corridor/landdb.py",
+        "first_failing_test": "tests/test_landdb.py::test_revision_reports_what_moved_in_and_out_of_scope",
+        "id": "D01",
+        "status": "killed"
+      },
+      {
+        "bug": "interests out of scope not withdrawn",
+        "file": "corridor/landdb.py",
+        "first_failing_test": "tests/test_landdb.py::test_revision_reports_what_moved_in_and_out_of_scope",
+        "id": "D02",
+        "status": "killed"
+      },
+      {
+        "bug": "completed steps not flagged for review",
+        "file": "corridor/landdb.py",
+        "first_failing_test": "tests/test_landdb.py::test_done_steps_of_withdrawn_interests_are_flagged_for_review",
+        "id": "D03",
+        "status": "killed"
+      },
+      {
+        "bug": "change of instrument not reported",
+        "file": "corridor/landdb.py",
+        "first_failing_test": "tests/test_round2.py::test_revision_reports_a_change_of_instrument",
+        "id": "D04",
+        "status": "killed"
+      },
+      {
+        "bug": "progress not carried over",
+        "file": "corridor/landdb.py",
+        "first_failing_test": "tests/test_landdb.py::test_revision_reports_what_moved_in_and_out_of_scope",
+        "id": "D05",
+        "status": "killed"
+      },
+      {
+        "bug": "s.42 limit not applied",
+        "file": "corridor/landdb.py",
+        "first_failing_test": "tests/test_landdb.py::test_temporary_occupation_longer_than_the_fact_sheet_limit_fails",
+        "id": "D06",
+        "status": "killed"
+      },
+      {
+        "bug": "TOL tenure rule inverted",
+        "file": "corridor/landdb.py",
+        "first_failing_test": "tests/test_landdb.py::test_a_clean_database_passes_every_rule",
+        "id": "D07",
+        "status": "killed"
+      },
+      {
+        "bug": "step order rule inverted",
+        "file": "corridor/landdb.py",
+        "first_failing_test": "tests/test_landdb.py::test_each_rule_catches_a_planted_error[V09]",
+        "id": "D08",
+        "status": "killed"
+      },
+      {
+        "bug": "interest and pieces may disagree",
+        "file": "corridor/landdb.py",
+        "first_failing_test": "tests/test_landdb.py::test_each_rule_catches_a_planted_error[V12]",
+        "id": "D09",
+        "status": "killed"
+      },
+      {
+        "bug": "interest area is its largest piece",
+        "file": "corridor/landdb.py",
+        "first_failing_test": "tests/test_round2.py::test_interest_area_sums_its_pieces_in_one_lot",
+        "id": "D10",
+        "status": "killed"
+      },
+      {
+        "bug": "surface take per lot not summed",
+        "file": "corridor/landdb.py",
+        "first_failing_test": "tests/test_landdb.py::test_each_rule_catches_a_planted_error[V05]",
+        "id": "D11",
+        "status": "killed"
+      },
+      {
+        "bug": "workbook total misses the last row",
+        "file": "corridor/outputs/schedule_xlsx.py",
+        "first_failing_test": "tests/test_outputs.py::test_workbook_written_now_matches_python",
+        "id": "O01",
+        "status": "killed"
+      },
+      {
+        "bug": "DXF alignment written northing, easting",
+        "file": "corridor/outputs/dxf_export.py",
+        "first_failing_test": "tests/test_outputs.py::test_dxf_reads_back_with_the_alignment_vertices",
+        "id": "O02",
+        "status": "killed"
+      },
+      {
+        "bug": "typed-number check disabled",
+        "file": "corridor/docs.py",
+        "first_failing_test": "tests/test_repo.py::test_typed_number_check_catches_a_number",
+        "id": "R01",
+        "status": "killed"
+      },
+      {
+        "bug": "percentages not multiplied by 100",
+        "file": "corridor/docs.py",
+        "first_failing_test": "tests/test_round2.py::test_number_formats_used_by_the_documents",
+        "id": "R02",
+        "status": "killed"
+      }
+    ],
+    "seconds": 286,
+    "survived": [],
+    "total": 57
+  },
+  "first": {
+    "equivalent": 0,
+    "killed": 48,
+    "mutants": [
+      {
+        "bug": "bearing measured from east, anticlockwise",
+        "file": "corridor/geometry.py",
+        "first_failing_test": "tests/test_geometry.py::test_bearing_is_clockwise_from_north_and_wrap_is_signed",
+        "id": "G01",
+        "status": "killed"
+      },
+      {
+        "bug": "tangent length uses the full deflection",
+        "file": "corridor/geometry.py",
+        "first_failing_test": "tests/test_geometry.py::test_right_angle_right_turn_hand_values",
+        "id": "G02",
+        "status": "killed"
+      },
+      {
+        "bug": "arc centre on the wrong side",
+        "file": "corridor/geometry.py",
+        "first_failing_test": "tests/test_geometry.py::test_right_angle_right_turn_hand_values",
+        "id": "G03",
+        "status": "killed"
+      },
+      {
+        "bug": "arc length halved",
+        "file": "corridor/geometry.py",
+        "first_failing_test": "tests/test_geometry.py::test_right_angle_right_turn_hand_values",
+        "id": "G04",
+        "status": "killed"
+      },
+      {
+        "bug": "arc swept the wrong way",
+        "file": "corridor/geometry.py",
+        "first_failing_test": "tests/test_geometry.py::test_right_angle_right_turn_hand_values",
+        "id": "G05",
+        "status": "killed"
+      },
+      {
+        "bug": "overlapping arcs accepted",
+        "file": "corridor/geometry.py",
+        "first_failing_test": "tests/test_geometry.py::test_pis_too_close_for_the_radius_are_rejected",
+        "id": "G06",
+        "status": "killed"
+      },
+      {
+        "bug": "rectangle built with a wrong normal",
+        "file": "corridor/geometry.py",
+        "first_failing_test": "tests/test_geometry.py::test_rectangle_dimensions_and_orientation",
+        "id": "G07",
+        "status": "killed"
+      },
+      {
+        "bug": "north box placed beyond the end of the alignment",
+        "file": "corridor/geometry.py",
+        "first_failing_test": "tests/test_geometry.py::test_station_boxes_on_a_straight_alignment",
+        "id": "G08",
+        "status": "killed"
+      },
+      {
+        "bug": "tunnel footprint with round ends overlapping the boxes",
+        "file": "corridor/geometry.py",
+        "first_failing_test": "tests/test_geometry.py::test_tunnel_footprint_area_is_width_times_centre_line_length",
+        "id": "G09",
+        "status": "killed"
+      },
+      {
+        "bug": "worksite set off from the box",
+        "file": "corridor/geometry.py",
+        "first_failing_test": "tests/test_geometry.py::test_worksite_sits_beside_the_box_on_the_requested_side",
+        "id": "G10",
+        "status": "killed"
+      },
+      {
+        "bug": "worksite on the opposite side",
+        "file": "corridor/geometry.py",
+        "first_failing_test": "tests/test_geometry.py::test_worksite_sits_beside_the_box_on_the_requested_side",
+        "id": "G11",
+        "status": "killed"
+      },
+      {
+        "bug": "twin-tube width double-counts a diameter",
+        "file": "corridor/geometry.py",
+        "first_failing_test": "tests/test_geometry.py::test_twin_tube_outer_width",
+        "id": "G12",
+        "status": "killed"
+      },
+      {
+        "bug": "deflection angle not wrapped",
+        "file": "corridor/geometry.py",
+        "first_failing_test": "tests/test_geometry.py::test_bearing_is_clockwise_from_north_and_wrap_is_signed",
+        "id": "G13",
+        "status": "killed"
+      },
+      {
+        "bug": "end straight measured from the wrong arc end",
+        "file": "corridor/geometry.py",
+        "first_failing_test": "tests/test_geometry.py::test_general_deflection_length_formula",
+        "id": "G14",
+        "status": "killed"
+      },
+      {
+        "bug": "tunnel footprint runs under the boxes",
+        "file": "corridor/components.py",
+        "first_failing_test": "tests/test_geometry.py::test_variants_in_the_inputs_build_with_the_stated_sizes",
+        "id": "C01",
+        "status": "killed"
+      },
+      {
+        "bug": "stratum bottom above its top",
+        "file": "corridor/components.py",
+        "first_failing_test": "tests/test_landdb.py::test_a_clean_database_passes_every_rule",
+        "id": "C02",
+        "status": "killed"
+      },
+      {
+        "bug": "worksites counted as railway structure",
+        "file": "corridor/components.py",
+        "first_failing_test": null,
+        "id": "C03",
+        "status": "survived"
+      },
+      {
+        "bug": "protection zone read from the safety-zone fact",
+        "file": "corridor/screening.py",
+        "first_failing_test": "tests/test_screening.py::test_zone_distances_are_the_verified_fact_values",
+        "id": "Z01",
+        "status": "killed"
+      },
+      {
+        "bug": "protection ring overlaps the first reserve",
+        "file": "corridor/screening.py",
+        "first_failing_test": "tests/test_screening.py::test_zone_rings_have_the_hand_computed_areas",
+        "id": "Z02",
+        "status": "killed"
+      },
+      {
+        "bug": "first reserve includes the structure itself",
+        "file": "corridor/screening.py",
+        "first_failing_test": "tests/test_screening.py::test_zone_rings_have_the_hand_computed_areas",
+        "id": "Z03",
+        "status": "killed"
+      },
+      {
+        "bug": "interfaces within 40 m reported as first reserve",
+        "file": "corridor/screening.py",
+        "first_failing_test": "tests/test_screening.py::test_existing_railway_zone_classification",
+        "id": "Z04",
+        "status": "killed"
+      },
+      {
+        "bug": "default ownership depth sign flipped",
+        "file": "corridor/screening.py",
+        "first_failing_test": "tests/test_landdb.py::test_interests_and_steps_follow_the_instruments",
+        "id": "Z05",
+        "status": "killed"
+      },
+      {
+        "bug": "stratum rule inverted",
+        "file": "corridor/screening.py",
+        "first_failing_test": "tests/test_landdb.py::test_interests_and_steps_follow_the_instruments",
+        "id": "Z06",
+        "status": "killed"
+      },
+      {
+        "bug": "TOL and s.42 swapped",
+        "file": "corridor/screening.py",
+        "first_failing_test": "tests/test_landdb.py::test_a_clean_database_passes_every_rule",
+        "id": "Z07",
+        "status": "killed"
+      },
+      {
+        "bug": "slivers counted as land take",
+        "file": "corridor/screening.py",
+        "first_failing_test": "tests/test_screening.py::test_slivers_are_kept_out_of_the_take_but_in_the_accounting",
+        "id": "A01",
+        "status": "killed"
+      },
+      {
+        "bug": "slivers left out of the accounting",
+        "file": "corridor/screening.py",
+        "first_failing_test": "tests/test_screening.py::test_slivers_are_kept_out_of_the_take_but_in_the_accounting",
+        "id": "A02",
+        "status": "killed"
+      },
+      {
+        "bug": "sliver area not summed",
+        "file": "corridor/screening.py",
+        "first_failing_test": "tests/test_screening.py::test_slivers_are_kept_out_of_the_take_but_in_the_accounting",
+        "id": "A03",
+        "status": "killed"
+      },
+      {
+        "bug": "every lot shown as State land",
+        "file": "corridor/screening.py",
+        "first_failing_test": "tests/test_landdb.py::test_interests_and_steps_follow_the_instruments",
+        "id": "A04",
+        "status": "killed"
+      },
+      {
+        "bug": "dominant zone is the smallest share",
+        "file": "corridor/screening.py",
+        "first_failing_test": "tests/test_screening.py::test_lot_attributes_dominant_use_and_state_land",
+        "id": "A05",
+        "status": "killed"
+      },
+      {
+        "bug": "buildings touching by a sliver counted",
+        "file": "corridor/screening.py",
+        "first_failing_test": "tests/test_screening.py::test_buildings_need_a_square_metre_inside_and_roofs_can_be_left_out",
+        "id": "A06",
+        "status": "killed"
+      },
+      {
+        "bug": "lots only near the works counted as in scope",
+        "file": "corridor/screening.py",
+        "first_failing_test": "tests/test_outputs.py::test_workbook_written_now_matches_python",
+        "id": "A07",
+        "status": "killed"
+      },
+      {
+        "bug": "area outside the lots ignored",
+        "file": "corridor/screening.py",
+        "first_failing_test": "tests/test_screening.py::test_area_is_conserved_with_part_outside_the_lots",
+        "id": "A08",
+        "status": "killed"
+      },
+      {
+        "bug": "score direction reversed",
+        "file": "corridor/options.py",
+        "first_failing_test": "tests/test_options.py::test_min_max_scores_and_non_discriminating_criteria",
+        "id": "S01",
+        "status": "killed"
+      },
+      {
+        "bug": "ties score zero",
+        "file": "corridor/options.py",
+        "first_failing_test": "tests/test_options.py::test_min_max_scores_and_non_discriminating_criteria",
+        "id": "S02",
+        "status": "killed"
+      },
+      {
+        "bug": "weights not renormalised",
+        "file": "corridor/options.py",
+        "first_failing_test": "tests/test_options.py::test_weights_are_renormalised_and_must_be_valid",
+        "id": "S03",
+        "status": "killed"
+      },
+      {
+        "bug": "ranking from worst",
+        "file": "corridor/options.py",
+        "first_failing_test": "tests/test_options.py::test_rank_breaks_ties_by_variant_key",
+        "id": "S04",
+        "status": "killed"
+      },
+      {
+        "bug": "tie tolerance below the best",
+        "file": "corridor/options.py",
+        "first_failing_test": "tests/test_options.py::test_snap_ties_treats_near_best_values_as_best",
+        "id": "S05",
+        "status": "killed"
+      },
+      {
+        "bug": "one-at-a-time sets the weight instead of scaling it",
+        "file": "corridor/options.py",
+        "first_failing_test": null,
+        "id": "S06",
+        "status": "survived"
+      },
+      {
+        "bug": "leave-one-out keeps the criterion",
+        "file": "corridor/options.py",
+        "first_failing_test": null,
+        "id": "S07",
+        "status": "survived"
+      },
+      {
+        "bug": "random weights count the last place",
+        "file": "corridor/options.py",
+        "first_failing_test": null,
+        "id": "S08",
+        "status": "survived"
+      },
+      {
+        "bug": "in and out of scope swapped",
+        "file": "corridor/landdb.py",
+        "first_failing_test": "tests/test_landdb.py::test_revision_reports_what_moved_in_and_out_of_scope",
+        "id": "D01",
+        "status": "killed"
+      },
+      {
+        "bug": "interests out of scope not withdrawn",
+        "file": "corridor/landdb.py",
+        "first_failing_test": "tests/test_landdb.py::test_revision_reports_what_moved_in_and_out_of_scope",
+        "id": "D02",
+        "status": "killed"
+      },
+      {
+        "bug": "completed steps not flagged for review",
+        "file": "corridor/landdb.py",
+        "first_failing_test": "tests/test_landdb.py::test_done_steps_of_withdrawn_interests_are_flagged_for_review",
+        "id": "D03",
+        "status": "killed"
+      },
+      {
+        "bug": "change of instrument not reported",
+        "file": "corridor/landdb.py",
+        "first_failing_test": null,
+        "id": "D04",
+        "status": "survived"
+      },
+      {
+        "bug": "progress not carried over",
+        "file": "corridor/landdb.py",
+        "first_failing_test": "tests/test_landdb.py::test_revision_reports_what_moved_in_and_out_of_scope",
+        "id": "D05",
+        "status": "killed"
+      },
+      {
+        "bug": "s.42 limit not applied",
+        "file": "corridor/landdb.py",
+        "first_failing_test": "tests/test_landdb.py::test_temporary_occupation_longer_than_the_fact_sheet_limit_fails",
+        "id": "D06",
+        "status": "killed"
+      },
+      {
+        "bug": "TOL tenure rule inverted",
+        "file": "corridor/landdb.py",
+        "first_failing_test": "tests/test_landdb.py::test_a_clean_database_passes_every_rule",
+        "id": "D07",
+        "status": "killed"
+      },
+      {
+        "bug": "step order rule inverted",
+        "file": "corridor/landdb.py",
+        "first_failing_test": "tests/test_landdb.py::test_each_rule_catches_a_planted_error[V09]",
+        "id": "D08",
+        "status": "killed"
+      },
+      {
+        "bug": "interest and pieces may disagree",
+        "file": "corridor/landdb.py",
+        "first_failing_test": "tests/test_landdb.py::test_each_rule_catches_a_planted_error[V12]",
+        "id": "D09",
+        "status": "killed"
+      },
+      {
+        "bug": "interest area is its largest piece",
+        "file": "corridor/landdb.py",
+        "first_failing_test": null,
+        "id": "D10",
+        "status": "survived"
+      },
+      {
+        "bug": "surface take per lot not summed",
+        "file": "corridor/landdb.py",
+        "first_failing_test": "tests/test_landdb.py::test_each_rule_catches_a_planted_error[V05]",
+        "id": "D11",
+        "status": "killed"
+      },
+      {
+        "bug": "workbook total misses the last row",
+        "file": "corridor/outputs/schedule_xlsx.py",
+        "first_failing_test": "tests/test_outputs.py::test_workbook_written_now_matches_python",
+        "id": "O01",
+        "status": "killed"
+      },
+      {
+        "bug": "DXF alignment written northing, easting",
+        "file": "corridor/outputs/dxf_export.py",
+        "first_failing_test": "tests/test_outputs.py::test_dxf_reads_back_with_the_alignment_vertices",
+        "id": "O02",
+        "status": "killed"
+      },
+      {
+        "bug": "typed-number check disabled",
+        "file": "corridor/docs.py",
+        "first_failing_test": "tests/test_repo.py::test_typed_number_check_catches_a_number",
+        "id": "R01",
+        "status": "killed"
+      },
+      {
+        "bug": "percentages not multiplied by 100",
+        "file": "corridor/docs.py",
+        "first_failing_test": null,
+        "id": "R02",
+        "status": "survived"
+      }
+    ],
+    "seconds": 313,
+    "survived": [
+      "C03",
+      "S06",
+      "S07",
+      "S08",
+      "D04",
+      "D10",
+      "R02"
+    ],
+    "total": 55
+  }
+}

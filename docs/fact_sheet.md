@@ -67,7 +67,7 @@ the screening (`corridor.config.fact_value()` refuses UNVERIFIED rows).
 | F15 | The first reserve is the land within 6 m of the outer edge of any part of the railway. | T2 | Q8 | "within 6 metres from the outermost edge of any part of the railway that is on, above or below the ground" | VERIFIED (used)<br>document text |
 | F17 | Restricted activities (for example piling, excavation, cranes, storage, temporary structures) in the railway protection zone need LTA's prior written permission. | T1 | cl. 1.2.1; list in T2 Q3 | "shall obtain prior written permission from the Authority before commencement of works on site" | VERIFIED<br>document text |
 | F18 | Site offices, workers' quarters and similar temporary buildings must be outside the first reserve. | T1 | cl. 3.2.1(b), p.76 | "Temporary buildings such as site office, worker’s quarter or similar shall be located outside the first reserve." | VERIFIED<br>document text |
-| F19 | Near underground railway structures, piling is not allowed in the first reserve and elsewhere in the zone must be kept at least 6 m clear on plan. | T1 | Table 3 (piling and drilling), p.79 | "Allowed if piles are kept at least 6m clear on plan from the exterior edge of rapid transit system structures." | VERIFIED<br>document text |
+| F19 | For underground railway structures, the Code's piling table marks the first reserve "Not allowed", with listed exceptions (for example piles 3 to 6 m from the structure) that may be considered case by case. | T1 | Table 3 (piling works) and its note, printed p.79 | "The following may be considered on case-by-case basis." | VERIFIED<br>document text |
 | F37 | Applications on restricted activities go to LTA's Development & Building Control (Rail). | T2 | Q4 | "Development & Building Control (Rail)" | VERIFIED<br>document text |
 | F35 | The Rapid Transit Systems (Railway Protection, Restricted Activities) Regulations define the railway protection zone and list the restricted activities. | L5 | not read | - | UNVERIFIED<br>SSO not accessed; the Code (T1) and FAQ (T2) cite these Regulations |
 
@@ -95,13 +95,13 @@ the screening (`corridor.config.fact_value()` refuses UNVERIFIED rows).
 | F28 | Areas shown on the Amendment Plan for rapid transit system structures are to be used for them whatever the underlying zoning. | U1 | para 4.1(ii)(c) | "shall despite the zoning for the respective area be used for such specified uses unless otherwise allowed by the competent authority" | VERIFIED<br>document text |
 | F29 | The road zone covers existing and proposed roads, and further road reserves may be secured. | U1 | Table 1, zone 23 "Road" | "Additional road reserves may be secured by the competent authority for any locality as may be deemed necessary." | VERIFIED<br>document text |
 | F30 | Uses of subterranean space may be approved even where they differ from the zoning of the land above. | U1 | para 4.8 | "The competent authority may consider and approve uses of subterranean spaces under land" | VERIFIED<br>document text |
-| F31 | The Master Plan 2025 was gazetted on 1 December 2025. | U2 | first paragraph | "The Master Plan 2025 (MP2025) is officially gazetted today." | VERIFIED<br>page text (dated 1 December 2025) |
+| F31 | The Master Plan 2025 was gazetted on 1 December 2025, and URA adopts it as Singapore's official land use plan. | U2 | first paragraph | "With the gazette, URA will formally adopt MP2025 as Singapore’s official land use plan" | VERIFIED<br>page text (dated 1 December 2025) |
 
 ## Data
 
 | ID | Claim | Source | Where | Quote | Status |
 |---|---|---|---|---|---|
-| F32 | URA describes its Master Plan layers on data.gov.sg as indicative, including the land-use zoning and the rail line alignments. | D1 | dataset descriptions (metadata API) of d_7a03324bed531cdff76a16239b0e84e1 and d_6615da031916f656152eafa013748d73 | "Indicative land use zoning layer." | VERIFIED<br>metadata text |
+| F32 | URA describes its Master Plan land-use layer on data.gov.sg as indicative (its rail line layer is described the same way, "Indicative alignment"). | D2 | dataset description; rail line layer d_6615da031916f656152eafa013748d73 likewise | "Indicative land use zoning layer." | VERIFIED<br>metadata text |
 | F33 | SLA's open cadastral layer shows approximate coordinated boundaries of surveyed lots; it is not a certified survey plan. | D1 | description of d_e7395d743076a2bcc487b0d12b9bf33b | "approximate coordinated boundaries (nearest cm) of each surveyed land parcel" | VERIFIED<br>metadata text; "not a certified survey plan" is the author's reading of "approximate" |
 
 ## Sources
@@ -124,4 +124,5 @@ the screening (`corridor.config.fact_value()` refuses UNVERIFIED rows).
 | T2 | Railway Protection Plan FAQ (Ver 1.2) | Land Transport Authority | `https://www.lta.gov.sg/content/dam/ltagov/industry_innovations/industry_matters/development_construction_resources/Building_Works_Restricted_Activities_in_Railway_Protection_Zone/railwayprotectionplan/Railway_Protection_Plan_FAQ_final.pdf` | 2026-11-24 | `91ed4cb46ee235d4...` |  |
 | U1 | The Planning Act - Master Plan Written Statement 2025 | Urban Redevelopment Authority | `https://isomer-user-content.by.gov.sg/467/411a4d45-c03d-4322-b57c-497714595cdd/MP25WrittenStatement.pdf` | 2026-11-24 | `fd29331989ec696c...` |  |
 | U2 | Gazette of Master Plan 2025 (press release, 1 December 2025) | Urban Redevelopment Authority | `https://www.ura.gov.sg/news/media/pr25-64/` | 2026-11-24 | `12850759b7a48083...` |  |
-| D1 | Dataset descriptions on data.gov.sg (metadata API) for the layers in data/manifest.json | data.gov.sg (Open Government Products) for URA and SLA | `https://data.gov.sg/datasets/d_e7395d743076a2bcc487b0d12b9bf33b/view` | 2026-11-24 | - |  |
+| D1 | Description of the SLA Cadastral Land Parcel dataset (data.gov.sg metadata service) | data.gov.sg, for the Singapore Land Authority | `https://api-production.data.gov.sg/v2/public/api/datasets/d_e7395d743076a2bcc487b0d12b9bf33b/metadata` | 2026-11-24 | - |  |
+| D2 | Description of the Amendment to Master Plan 2025 Land Use Layer dataset (data.gov.sg metadata service) | data.gov.sg, for the Urban Redevelopment Authority | `https://api-production.data.gov.sg/v2/public/api/datasets/d_7a03324bed531cdff76a16239b0e84e1/metadata` | 2026-11-24 | - |  |

@@ -148,6 +148,19 @@ def buildings_involved(comps: gpd.GeoDataFrame, buildings: gpd.GeoDataFrame, id_
                                        "area_in_footprint_m2", "building_area_m2"])
 
 
+def buildings_by_lot(pieces: gpd.GeoDataFrame, osm: gpd.GeoDataFrame) -> dict[str, int]:
+    """Distinct buildings (OSM, roofs left out) inside the surface take of each lot. A building that two pieces
+    of the same lot touch is counted once; one that spans two lots is counted on each."""
+    surf = pieces[pieces["take"] != "permanent_subterranean"]
+    b = osm[~osm["building"].isin(["roof"])]
+    ids: dict[str, set] = {}
+    for r in surf.itertuples():
+        idx = b.sindex.query(r.geometry, predicate="intersects")
+        found = {b["osm_id"].iloc[i] for i in idx if b.geometry.iloc[i].intersection(r.geometry).area >= MIN_BUILDING_M2}
+        ids.setdefault(r.LOT_KEY, set()).update(found)
+    return {k: len(v) for k, v in ids.items()}
+
+
 def existing_railway_interfaces(comps: gpd.GeoDataFrame, rail_lines: gpd.GeoDataFrame,
                                 stations: gpd.GeoDataFrame, distances: dict[str, float]) -> pd.DataFrame:
     """Distance from each component to the indicative Master Plan rail lines and station outlines.
@@ -264,16 +277,7 @@ def screen_variant(key: str, al, comps: gpd.GeoDataFrame, study: dict, attrs: pd
     bld = buildings_involved(comps, osm, "osm_id", "building", exclude_types=("roof",))
     roofs = buildings_involved(comps, osm[osm["building"] == "roof"], "osm_id", "building")
     mpb = buildings_involved(comps, study["mp_buildings"], "OBJECTID", "BLDG_TYPE")
-    # buildings in surface take, by lot (a building can sit on more than one lot: counted on each)
-    surf = pieces[pieces["take"] != "permanent_subterranean"]
-    lot_bld: dict[str, int] = {}
-    if len(surf):
-        b = osm[~osm["building"].isin(["roof"])]
-        for r in surf.itertuples():
-            idx = b.sindex.query(r.geometry, predicate="intersects")
-            n = sum(1 for i in idx if b.geometry.iloc[i].intersection(r.geometry).area >= MIN_BUILDING_M2)
-            lot_bld[r.LOT_KEY] = lot_bld.get(r.LOT_KEY, 0) + n
-    sched = lot_schedule(key, pieces, attrs, zp, bld, lot_bld, crown, default_level)
+    sched = lot_schedule(key, pieces, attrs, zp, bld, buildings_by_lot(pieces, osm), crown, default_level)
     iface = existing_railway_interfaces(comps, study["rail_lines"], study["rail_stations"], distances)
     return {"pieces": pieces, "accounting": acct, "zone_pieces": zp, "rings": rings, "structure": structure,
             "buildings": bld, "roofs": roofs, "mp_buildings": mpb, "schedule": sched, "interfaces": iface,

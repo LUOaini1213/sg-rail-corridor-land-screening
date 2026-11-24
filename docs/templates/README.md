@@ -49,12 +49,13 @@ Full list, licences and hashes: [docs/data_sources.md](docs/data_sources.md).
 - **State land is only partly visible**: SLA's layers of vacant State land, State land managed by its agents and
   State reserves. Most lots therefore have *unknown* tenure.
 - **Zoning** comes from URA's Master Plan 2025 land-use layer as amended; **rail lines and stations** from the
-  Master Plan rail layers (indicative). There is no open layer of railway protection lines or road reserve lines.
+  Master Plan rail layers (indicative). No open layer of railway protection lines or road reserve lines was found.
 - **Buildings**: URA's Master Plan building layer holds only HDB blocks and a few building types
   ({{data_quality.mp_buildings.count}} footprints in the box), so OpenStreetMap footprints ({{data_quality.osm_buildings.count}} in the box, ODbL) are used for building
   counts; {{data_quality.building_cross_check.matched_by_osm}} of the {{data_quality.building_cross_check.mp_buildings}} URA footprints are matched by an OSM footprint.
-- **OneMap** was not used: its terms prohibit storing or redistributing SLA data without permission and require
-  developer registration. There are no API keys in this repository.
+- **OneMap** was not used: its terms license use of SLA's data but, beyond that licence, bar storing, distributing
+  or publicly displaying it, and applications built on its API need developer registration. No OneMap data, tiles
+  or API keys are in this repository.
 
 ## 2. The rules used, sourced
 
@@ -162,8 +163,18 @@ No QGIS project file is included: none could be validated without QGIS, which wa
   distances, area conservation per component, the SVY21 round trip (error below {{data_quality.crs_round_trip_bound_m:g}} m), instrument routing,
   each database rule against a planted error, the workbook totals, DXF read-back, the briefing page count, and
   this README and the other generated documents against a fresh rendering.
-- **CI** (`.github/workflows/ci.yml`) reruns the pipeline offline from the committed extract and fails if any
-  result or generated document changes.
+- **Mutation testing** (`scripts/mutate.py`): hand-written bugs planted one at a time in geometry, zone distances,
+  area accounting, scoring, the database update and the outputs, with the golden comparisons left out so that a
+  kill must come from a behavioural test. First run: {{mutation.first.killed}} of {{mutation.first.total}} caught. Each survivor
+  ({{mutation.first.survived:join}}) got a test in `tests/test_round2.py`; the final run, which also includes mutants
+  written for code added after the first run, caught {{mutation.final.killed}} of {{mutation.final.total}} (`results/mutation.json`).
+- **Quotes**: `scripts/check_quotes.py` downloads each source again and finds all {{quote_check.summary.found}} of
+  {{quote_check.summary.verified_rows}} VERIFIED quotes in it (`results/quote_check.json`; needs the network, so not in CI).
+- **CI** (`.github/workflows/ci.yml`) runs the tests, rebuilds results, outputs and documents offline from the
+  committed extract and fails if any result (compared with a small tolerance) or generated document changes; a
+  second job reruns the mutation test and fails unless every planted bug is caught.
+- **Adversarial self-review**: what was challenged, what changed and what is still open is in
+  [docs/self_review.md](docs/self_review.md).
 
 ## Provenance
 
@@ -200,9 +211,13 @@ No QGIS project file is included: none could be validated without QGIS, which wa
 python -m venv .venv && .venv/Scripts/pip install -r requirements.txt   # Python 3.11 (Linux/macOS: .venv/bin/pip)
 python -m pytest -q                       # offline, on the committed extract
 python -m corridor.pipeline               # results/, outputs/, figures/ from the committed extract
+python scripts/count_tests.py             # the test count quoted here
 python scripts/build_docs.py              # README.md and docs/ from results/
+python scripts/check_results.py           # what CI runs: rebuild and compare with the committed files
 python scripts/mutate.py --record final   # mutation test of the test suite
 python scripts/fetch_data.py && python scripts/fetch_osm.py && python scripts/build_study_area.py   # needs network; newer data give different numbers
+python scripts/survey_raw.py              # island-wide checks behind the choice of end stations (needs the downloads)
+python scripts/check_quotes.py            # finds every VERIFIED quote in its source again (needs network)
 ```
 
 ## Licence and attribution

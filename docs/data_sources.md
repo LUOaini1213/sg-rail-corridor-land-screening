@@ -30,13 +30,13 @@
 | Legal land lots (cadastre) | SLA Cadastral Land Parcel: lot key and approximate boundary of every surveyed lot, updated weekly | Singapore Open Data Licence v1.0 | Yes, as the parcel base (447 lots touch the study box) | No owner, tenure, title depth, encumbrance or title area; the boundaries are approximate (fact F33). Lot particulars come from a lot search on SLA's website (fact sheet source T2), not from open data |
 | Land-use zoning | URA Master Plan 2025 land-use layer, as amended | Singapore Open Data Licence v1.0 | Yes, for the dominant zone of each lot | Indicative (F32); zoning polygons are not lots |
 | State land | SLA layers of vacant State land, State land managed by SLA's appointed agents, and State reserves | Singapore Open Data Licence v1.0 | Yes, as a State-land indicator | Partial: only those categories are shown, so for most lots tenure stays unknown |
-| Railway protection and safeguarding lines | No open layer. LTA sells railway protection plans lot by lot (fact sheet source T2) | - | No | The protection distances of the fact sheet are applied around the fictional structure instead |
+| Railway protection and safeguarding lines | No open layer was found. LTA's Code says plans of the railway zones can be viewed by appointment or bought lot by lot (fact sheet source T1) | - | No | The protection distances of the fact sheet are applied around the fictional structure instead |
 | Existing rail lines and stations | URA Master Plan 2025 rail line and station layers, as amended | Singapore Open Data Licence v1.0 | Yes, for interfaces and for the check that the fictional line follows no line on the Master Plan | Indicative centre lines and outlines; the Master Plan calls its rail notations diagrammatic (F27) |
 | Road reserve lines | Not found as open data | - | The Master Plan road zone is used as a stand-in | Road reserve boundaries not available |
 | Building footprints | URA Master Plan 2025 building layer: island-wide 15,392 footprints, of which 13,827 are HDB blocks and the rest are typed landmark, higher education or health and medical care; 255 lie in the study box | Singapore Open Data Licence v1.0 | Yes, for housing-block counts | Not a complete building layer: other buildings are absent |
 | Building footprints | OpenStreetMap: 480 footprints in the box | Open Database Licence 1.0 | Yes, for buildings in the footprints | Volunteer-mapped; 237 of 255 URA footprints are matched by an OSM footprint covering at least half of them |
 | Ground levels | No open elevation model was found among the sources checked | - | No | Tunnel levels are assumed directly in metres above or below the Singapore Height Datum (SHD) |
-| OneMap (SLA) | Its terms of use prohibit storing, distributing or publicly displaying SLA data without permission and require developer registration for applications | - | No | No OneMap data, tiles or API keys are in this repository |
+| OneMap (SLA) | Its terms of use license use of SLA's data but, beyond that licence, bar storing, distributing or publicly displaying it; applications built on its API need developer registration | - | No | No OneMap data, tiles or API keys are in this repository |
 | Statutes | Singapore Statutes Online refused automated access | - | Copies held by FAOLEX were read instead | See the fact sheet |
 
 ## How the data are handled
@@ -65,6 +65,18 @@
   building counts derived from it are under the same licence.
 - **Documents cited in the fact sheet** (statutes, LTA, URA, SLA and MinLaw publications) are cited, not
   reproduced; only short quotes are given.
+
+## Other documents read
+
+Cited as plain text, not linked (see the fact sheet for why).
+
+| Document | Publisher | Address | Used for |
+|---|---|---|---|
+| Factsheet: The Next Phase of Rail Development (news release, March 2026) | Land Transport Authority | `https://www.lta.gov.sg/content/ltagov/en/newsroom/2026/3/news-releases/next-phase-of-rail-development.html` | Areas named for rail studies, avoided when choosing the end stations |
+| Expanding our Rail Network and Strengthening Rail Reliability and Resilience (news release, March 2025) | Land Transport Authority | `https://www.lta.gov.sg/content/ltagov/en/newsroom/2025/3/news-releases/expanding_our_rail_network_and_strengthening_rail_reliability.html` | Same |
+| OneMap Terms of Use | Singapore Land Authority | `https://www.onemap.gov.sg/legal/termsofuse.html` | Decision not to use OneMap |
+| Singapore Open Data Licence version 1.0 | data.gov.sg | `https://data.gov.sg/open-data-licence` | Attribution and conditions |
+| Website terms of use of SLA, LTA, URA and the Ministry of Law | the agencies | read on 2026-11-24 | Permission is needed before linking, so addresses are given as plain text |
 
 ## Quirks noticed in the sources
 

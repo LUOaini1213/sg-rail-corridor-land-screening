@@ -82,7 +82,7 @@ def make(full, summary, attrs, study, path: Path) -> dict:
     m.save(str(path))
     text = path.read_text(encoding="utf-8")
     path.write_text(text, encoding="utf-8", newline="\n")
-    return {"path": rel(path), "bytes": len(text.encode("utf-8")), "layers": counts,
+    return {"path": rel(path), "layers": counts,
             "geojson_layers": text.count("L.geoJson(")}
 
 

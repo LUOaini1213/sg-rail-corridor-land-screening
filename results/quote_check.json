@@ -1,0 +1,97 @@
+{
+  "facts": {
+    "F01": true,
+    "F02": true,
+    "F03": true,
+    "F04": true,
+    "F05": true,
+    "F06": true,
+    "F07": true,
+    "F08": true,
+    "F09": true,
+    "F10": true,
+    "F11": true,
+    "F12": true,
+    "F13": true,
+    "F14": true,
+    "F15": true,
+    "F16": true,
+    "F17": true,
+    "F18": true,
+    "F19": true,
+    "F20": true,
+    "F21": true,
+    "F23": true,
+    "F24": true,
+    "F25": true,
+    "F26": true,
+    "F27": true,
+    "F28": true,
+    "F29": true,
+    "F30": true,
+    "F31": true,
+    "F32": true,
+    "F33": true,
+    "F37": true
+  },
+  "sources": {
+    "D1": {
+      "bytes": 1275,
+      "sha256_matches_recorded": false
+    },
+    "D2": {
+      "bytes": 1526,
+      "sha256_matches_recorded": false
+    },
+    "L1c": {
+      "bytes": 320330,
+      "sha256_matches_recorded": true
+    },
+    "L3c": {
+      "bytes": 122401,
+      "sha256_matches_recorded": true
+    },
+    "L4c": {
+      "bytes": 181630,
+      "sha256_matches_recorded": true
+    },
+    "M1": {
+      "bytes": 43572,
+      "sha256_matches_recorded": true
+    },
+    "M3": {
+      "bytes": 46277,
+      "sha256_matches_recorded": true
+    },
+    "S1": {
+      "bytes": 466132,
+      "sha256_matches_recorded": true
+    },
+    "S2": {
+      "bytes": 437838,
+      "sha256_matches_recorded": true
+    },
+    "T1": {
+      "bytes": 3861722,
+      "sha256_matches_recorded": true
+    },
+    "T2": {
+      "bytes": 274776,
+      "sha256_matches_recorded": true
+    },
+    "U1": {
+      "bytes": 958669,
+      "sha256_matches_recorded": true
+    },
+    "U2": {
+      "bytes": 459532,
+      "sha256_matches_recorded": false
+    }
+  },
+  "summary": {
+    "checked": 33,
+    "found": 33,
+    "not_found": [],
+    "verified_rows": 33
+  }
+}

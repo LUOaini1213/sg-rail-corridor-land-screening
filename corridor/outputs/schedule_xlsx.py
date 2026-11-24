@@ -92,7 +92,8 @@ def make(full, summary, attrs, path: Path) -> dict:
         tot = last + 1
         ws.cell(row=tot, column=1, value="Total").font = BOLD
         for j, (_, col, fmt) in enumerate(COLUMNS, start=1):
-            if fmt:
+            # no total for buildings: one building can stand on two lots, so the column does not add up
+            if fmt and col != "buildings_in_surface_take":
                 L = get_column_letter(j)
                 c = ws.cell(row=tot, column=j, value=f"=SUM({L}{first}:{L}{last})")
                 c.font, c.number_format = BOLD, fmt
