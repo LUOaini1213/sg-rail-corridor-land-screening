@@ -1,0 +1,405 @@
+# Sourced fact sheet: the single source of the legal and regulatory facts the screening uses.
+# Not legal advice. Each row was checked against the cited document on the access date by reading its text.
+# VERIFIED   = the quoted words were found in the cited document (statute rows: in the copy named in `basis`).
+# UNVERIFIED = the document could not be read (reason in `basis`); the row is a pointer, not a fact.
+# Quotes are kept short and are reproduced only to let a reader check the claim against the original.
+# Rows with a `value` feed calculations; corridor.config.fact_value() refuses to use an UNVERIFIED row.
+
+accessed: "2026-11-24"
+
+sources:
+  L1:
+    title: Land Acquisition Act 1966 (2020 Revised Edition)
+    publisher: Attorney-General's Chambers, Singapore Statutes Online (SSO)
+    url: https://sso.agc.gov.sg/Act/LAA1966
+    note: SSO returned HTTP 403 to an automated request for its Terms of Use page on 2026-11-24, so SSO was not accessed further (no bot challenge was attempted). Read instead from source L1c.
+  L1c:
+    title: Land Acquisition Act 1966, 2020 Revised Edition, SSO-generated PDF marked "Informal Consolidation - version in force from 1/10/2025"
+    publisher: Copy hosted by FAOLEX (Food and Agriculture Organization of the United Nations)
+    url: https://faolex.fao.org/docs/pdf/sin46853.pdf
+    sha256: c8a0e953af3b5ad9028d97105f4448a3aed036562e1d10c12ba0a58468f4a66c
+    note: A third-party copy of the official informal consolidation; amendments after 1 October 2025, if any, are not reflected.
+  L2:
+    title: State Lands Act 1920 (2020 Revised Edition)
+    publisher: Attorney-General's Chambers, Singapore Statutes Online (SSO)
+    url: https://sso.agc.gov.sg/Act/SLA1920
+    note: Not accessed (see L1). The only FAOLEX copy found is the 1996 Revised Edition, which predates the 2015 amendments, so it was not used.
+  L3c:
+    title: State Lands Rules, SSO-generated PDF marked "Informal Consolidation - version in force from 29/5/2026"
+    publisher: Copy hosted by FAOLEX
+    url: https://faolex.fao.org/docs/pdf/sin114301.pdf
+    sha256: 245a33db08f648563cf2890b49b65a8cb1eb4a93c3eb6b5b55f205cae7ef7b77
+  L4c:
+    title: Singapore Land Authority Act 2001, 2020 Revised Edition, SSO-generated PDF marked "Informal Consolidation - version in force from 1/11/2024"
+    publisher: Copy hosted by FAOLEX
+    url: https://faolex.fao.org/docs/pdf/sin27950.pdf
+    sha256: a6ff935c52100fc5e450a4b034ec9ae34be3e5f575f2c69ca4535fa3a3309347
+  L5:
+    title: Rapid Transit Systems Act 1995 and its regulations
+    publisher: Attorney-General's Chambers, Singapore Statutes Online (SSO)
+    url: https://sso.agc.gov.sg/Act/RTSA1995
+    note: Not accessed (see L1); no other copy was found.
+  M1:
+    title: Legislative changes to facilitate future planning and development of underground space (press release, 12 Feb 2015)
+    publisher: Ministry of Law
+    url: https://www.mlaw.gov.sg/news/press-releases/legislative-changes-planning-development-underground-space/
+    sha256: 60cc2f6a64884fe79ee7ad9d8d42d1b49794ae30826113fcb901a353274df483
+  M2:
+    title: Fact sheet on State Lands (Amendment) Bill and Land Acquisition (Amendment) Bill (13 Mar 2015)
+    publisher: Ministry of Law
+    url: https://www.mlaw.gov.sg/files/news/parliamentary-speeches/2015/03/Factsheet%20on%20LAA%20and%20SLA.pdf
+    sha256: d816b57154a4be853ec4170e2b382100b2311e445c435b7791c76b13ea0384c5
+  M3:
+    title: Second Reading Speech on the Land Acquisition (Amendment) Bill 2015 (13 Mar 2015)
+    publisher: Ministry of Law
+    url: https://mlaw.gov.sg/news/parliamentary-speeches/2r-land-acquisition-amendment-bill-2015
+    sha256: 173b09c5b848b09eb119ff1ded0c337a38373bbb81c1474b1e3a5d30da00d374
+  M4:
+    title: Fact sheet on Land Acquisition (Amendment) Bill (5 Aug 2014)
+    publisher: Ministry of Law
+    url: https://www.mlaw.gov.sg/files/news/parliamentary-speeches/2014/08/Factsheet%20for%20LAA_2R_2014.pdf
+    sha256: 0555b1f14e7610a7099d46fc000055a55c4460c9ece6b3e5a75ebd00eb82d229
+  S1:
+    title: Acquisition of land (page last updated 26 August 2025)
+    publisher: Singapore Land Authority
+    url: https://www.sla.gov.sg/properties/acquisition-of-land/
+    sha256: e6bb5a2f88e84e491e3625a45bb50268753d88e29cb425ec084a829333cdd25f
+  S2:
+    title: Short-Term Rental (page last updated 9 February 2026)
+    publisher: Singapore Land Authority
+    url: https://www.sla.gov.sg/properties/rent-state-land-and-properties/short-term-rental/
+    sha256: 6aa30f1445206b4b77ac7027d72e0a867b166534e0692ab2130fc41cdbbc6572
+  T1:
+    title: Code of Practice for Railway Protection, 2024 Edition (December 2024)
+    publisher: Land Transport Authority
+    url: https://www.lta.gov.sg/content/dam/ltagov/industry_innovations/industry_matters/development_construction_resources/Building_Works_Restricted_Activities_in_Railway_Protection_Zone/Codes_of_Practice_Standards_Specifications_Guides_Forms/code_of_practice_for_railway_protection_2024_edition.pdf
+    sha256: a7b3e74963e78a5f42df7930496b87580f07fb6028fff410ebdbdd067dc506ef
+    note: LTA lists an Addendum (September 2026) on compressible soils affecting tunnels; the addendum was not used here.
+  T2:
+    title: Railway Protection Plan FAQ (Ver 1.2)
+    publisher: Land Transport Authority
+    url: https://www.lta.gov.sg/content/dam/ltagov/industry_innovations/industry_matters/development_construction_resources/Building_Works_Restricted_Activities_in_Railway_Protection_Zone/railwayprotectionplan/Railway_Protection_Plan_FAQ_final.pdf
+    sha256: 91ed4cb46ee235d4a048164d6de9075a06065bada2b459d66bfb604a8122ad5c
+  U1:
+    title: The Planning Act - Master Plan Written Statement 2025
+    publisher: Urban Redevelopment Authority
+    url: https://isomer-user-content.by.gov.sg/467/411a4d45-c03d-4322-b57c-497714595cdd/MP25WrittenStatement.pdf
+    sha256: fd29331989ec696c3c2187532d4a39b68892f5df3a8b5546f9bc3ee763c6381b
+  U2:
+    title: Gazette of Master Plan 2025 (press release, 1 December 2025)
+    publisher: Urban Redevelopment Authority
+    url: https://www.ura.gov.sg/news/media/pr25-64/
+    sha256: 12850759b7a480830b9ce866ec89f253d8a60c19b31ade47ac1ebe3295a9e357
+  D1:
+    title: Dataset descriptions on data.gov.sg (metadata API) for the layers in data/manifest.json
+    publisher: data.gov.sg (Open Government Products) for URA and SLA
+    url: https://data.gov.sg/datasets/d_e7395d743076a2bcc487b0d12b9bf33b/view
+
+facts:
+  # --- Land Acquisition Act essentials -------------------------------------------------------------
+  - id: F01
+    topic: Land acquisition
+    claim: The President may declare land required, by notification in the Gazette, where it is needed for any public purpose, for a work of public benefit, utility or interest, or for residential, commercial or industrial purposes.
+    source: L1c
+    locator: s.5(1)
+    quote: "the President may, by notification in the Gazette, declare the land to be required for the purpose specified in the notification"
+    status: VERIFIED
+    basis: SSO-generated consolidation (in force from 1/10/2025) read from the FAOLEX copy
+  - id: F02
+    topic: Land acquisition
+    claim: The s.5 notification states the town subdivision or mukim, the lot number and approximate area, and is conclusive evidence that the land is needed.
+    source: L1c
+    locator: s.5(2)-(3)
+    quote: "The notification is conclusive evidence that the land is needed for the purpose specified therein"
+    status: VERIFIED
+    basis: as F01
+  - id: F03
+    topic: Land acquisition
+    claim: A preliminary notification under s.3(1) lets authorised officers enter and survey land likely to be needed; it lapses after 12 months.
+    source: L1c
+    locator: s.3(1), s.3(3)
+    quote: "ceases to have effect on the expiration of 12 months from the date of its publication"
+    status: VERIFIED
+    basis: as F01
+  - id: F04
+    topic: Compensation
+    claim: For land acquired on or after 12 February 2007, compensation starts from the market value as at the date of the s.3(1) notification (if a s.5 declaration follows within 6 months) or otherwise as at the date of the s.5 declaration, with other listed heads such as severance, injurious affection and relocation expenses.
+    source: L1c
+    locator: s.33(1)(a)-(f)
+    quote: "where the date of acquisition of the land is on or after 12 February 2007, the market value of the acquired land"
+    status: VERIFIED
+    basis: as F01
+  - id: F05
+    topic: Compensation
+    claim: Market value is capped at what a bona fide purchaser would pay given the zoning and density under the Planning Act at the date of acquisition; potential value for a more intensive use is ignored.
+    source: L1c
+    locator: s.33(5)(e)
+    quote: "no account is to be taken of any potential value of the land for any other use more intensive than that permitted"
+    status: VERIFIED
+    basis: as F01
+  - id: F06
+    topic: Land acquisition
+    claim: SLA administers the Land Acquisition Act; owners are paid market value compensation; SLA lists the steps as notice of acquisition, Collector's inquiry, Collector's award, payment and possession, and appeal to the Appeals Board.
+    source: S1
+    locator: sections "Compulsory acquisition of land" and "The acquisition process"
+    quote: "Land acquisition in Singapore is governed by the Land Acquisition Act, and SLA is responsible for its administration."
+    status: VERIFIED
+    basis: page text
+  - id: F07
+    topic: Land acquisition
+    claim: SLA acts as the Government's agent in the acquisition of land under the Land Acquisition Act and in managing State land.
+    source: L4c
+    locator: s.6(1)(e)(i)-(ii)
+    quote: "to act as agent of the Government in"
+    status: VERIFIED
+    basis: SSO-generated consolidation (in force from 1/11/2024) read from the FAOLEX copy
+  # --- State land and temporary occupation -----------------------------------------------------------
+  - id: F08
+    topic: State land and TOL
+    claim: The Collector of Land Revenue may issue licences or tenancy agreements for the temporary occupation of State land; licences issued on or after 18 February 2021 run for less than 10 years and create no tenancy.
+    source: L3c
+    locator: r.19(1), r.20(1)-(2)
+    quote: "The Collector of Land Revenue may issue licences or enter into tenancy agreements for the occupation of State land for temporary purposes."
+    status: VERIFIED
+    basis: SSO-generated consolidation (in force from 29/5/2026) read from the FAOLEX copy
+  - id: F09
+    topic: State land and TOL
+    claim: SLA issues Temporary Occupation Licences (TOLs) for short-term use of State land and buildings.
+    source: S2
+    locator: page text
+    quote: "A Temporary Occupation Licence (TOL) may be issued for the occupation of State lands and buildings for short-term uses."
+    status: VERIFIED
+    basis: page text
+  - id: F10
+    topic: Temporary occupation
+    claim: Land that is not State land may be temporarily occupied for a public purpose, ordinarily for not more than 3 continuous years, after at least one month's notice; entry includes boring a tunnel under the land.
+    source: L1c
+    locator: s.42(1), (3), (8)
+    quote: "ordinarily not exceeding a total of 3 continuous years from the start of the occupation"
+    status: VERIFIED
+    basis: as F01
+    value: 3
+    unit: years
+  - id: F11
+    topic: Temporary occupation
+    claim: Owners of temporarily occupied, remaining surface or severed land who suffer substantial impairment may ask the Government to acquire the land.
+    source: L1c
+    locator: s.49(1)
+    quote: "request the Government to acquire under this Act"
+    status: VERIFIED
+    basis: as F01
+  # --- Railway protection and safeguarding ---------------------------------------------------------
+  - id: F12
+    topic: Railway safeguarding
+    claim: The railway corridor is the land within 40 m of the outer edge of a railway area.
+    source: T1
+    locator: Definitions, p.11
+    quote: "“railway corridor” means the part of the land or area that is within 40 metres from the outermost edge of any part of a railway area"
+    status: VERIFIED
+    basis: document text
+    value: 40
+    unit: m
+  - id: F13
+    topic: Railway protection
+    claim: The railway protection zone is the land within 40 m of the outer edge of any part of the railway, on, above or below ground.
+    source: T1
+    locator: Definitions, p.11
+    quote: "within 40 metres from the outermost edge of any part of the railway that is on, above or below the ground"
+    status: VERIFIED
+    basis: document text
+    value: 40
+    unit: m
+  - id: F14
+    topic: Railway protection
+    claim: The railway safety zone is delineated 60 m from the outer edge of any part of the railway (the Code defines it by reference to LTA's plans under the regulations).
+    source: T2
+    locator: Q2
+    quote: "The Railway Safety Zone refers to the land delineated 60 metres from the outermost edge of any part of the railway"
+    status: VERIFIED
+    basis: document text
+    value: 60
+    unit: m
+  - id: F15
+    topic: Railway protection
+    claim: The first reserve is the land within 6 m of the outer edge of any part of the railway.
+    source: T2
+    locator: Q8
+    quote: "within 6 metres from the outermost edge of any part of the railway that is on, above or below the ground"
+    status: VERIFIED
+    basis: document text
+    value: 6
+    unit: m
+  - id: F16
+    topic: Railway safeguarding
+    claim: LTA describes the railway corridor as based on the railway area gazetted under s.3 of the Rapid Transit Systems Act to safeguard land for proposed lines.
+    source: T2
+    locator: Q6
+    quote: "based on the railway area gazetted in accordance with Section 3 of the Rapid Transit System Act"
+    status: VERIFIED
+    basis: LTA's description; the Act itself was not read (see F34)
+  - id: F17
+    topic: Railway protection
+    claim: Restricted activities (for example piling, excavation, cranes, storage, temporary structures) in the railway protection zone need LTA's prior written permission.
+    source: T1
+    locator: cl. 1.2.1; list in T2 Q3
+    quote: "shall obtain prior written permission from the Authority before commencement of works on site"
+    status: VERIFIED
+    basis: document text
+  - id: F18
+    topic: Railway protection
+    claim: Site offices, workers' quarters and similar temporary buildings must be outside the first reserve.
+    source: T1
+    locator: cl. 3.2.1(b), p.76
+    quote: "Temporary buildings such as site office, worker’s quarter or similar shall be located outside the first reserve."
+    status: VERIFIED
+    basis: document text
+  - id: F19
+    topic: Railway protection
+    claim: Near underground railway structures, piling is not allowed in the first reserve and elsewhere in the zone must be kept at least 6 m clear on plan.
+    source: T1
+    locator: Table 3 (piling and drilling), p.79
+    quote: "Allowed if piles are kept at least 6m clear on plan from the exterior edge of rapid transit system structures."
+    status: VERIFIED
+    basis: document text
+  - id: F20
+    topic: Railway safeguarding
+    claim: A railway protection plan is not a land acquisition document; acquired lots show the Land Acquisition Act gazette number in SLA's lot search.
+    source: T2
+    locator: Q14
+    quote: "Railway protection plan is not related to land acquisition."
+    status: VERIFIED
+    basis: document text
+  - id: F37
+    topic: Railway protection
+    claim: Applications on restricted activities go to LTA's Development & Building Control (Rail).
+    source: T2
+    locator: Q4
+    quote: "Development & Building Control (Rail)"
+    status: VERIFIED
+    basis: document text
+  # --- Underground space ----------------------------------------------------------------------------
+  - id: F21
+    topic: Underground space
+    claim: MinLaw described the 2015 State Lands Act amendments as clarifying that surface owners own the underground space down to 30 m below the Singapore Height Datum (SHD), unless the State title specifies otherwise.
+    source: M1
+    locator: section "Clarification of extent of underground ownership"; also M2
+    quote: "surface landowners own the underground space up to 30 metres under the Singapore Height Datum"
+    status: VERIFIED
+    basis: MinLaw's description of the Bill; the enacted text is F22
+    value: -30
+    unit: m SHD
+  - id: F22
+    topic: Underground space
+    claim: The State Lands Act as now in force contains this default depth.
+    source: L2
+    locator: not read
+    quote: ""
+    status: UNVERIFIED
+    basis: SSO not accessed (see L1); no other copy of the current Act was found
+  - id: F23
+    topic: Strata acquisition
+    claim: A declaration may cover only part of the airspace above, or of the subterranean space below, a piece of land.
+    source: L1c
+    locator: s.5(1A)
+    quote: "only so much of subterranean space below the surface of any land, is needed"
+    status: VERIFIED
+    basis: as F01
+  - id: F24
+    topic: Strata acquisition
+    claim: Where only subterranean space is acquired, compensation is based on the market value of that space plus the other listed heads.
+    source: L1c
+    locator: s.33(1A)
+    quote: "the market value of the airspace or subterranean space acquired"
+    status: VERIFIED
+    basis: as F01
+  - id: F25
+    topic: Strata acquisition
+    claim: Under the Act "land" includes airspace and subterranean space; subterranean space is the subsoil below the surface.
+    source: L1c
+    locator: s.2(1)
+    quote: "“subterranean space” means the subsoil below the surface of the earth"
+    status: VERIFIED
+    basis: as F01
+  - id: F26
+    topic: Strata acquisition
+    claim: MinLaw explained that strata acquisition lets the Government take only the stratum a public project needs instead of the whole column of land.
+    source: M3
+    locator: "Allowing Flexibility to Acquire Specific Stratum of Space"
+    quote: "instead of having to acquire the entire column of land, including the surface land and airspace"
+    status: VERIFIED
+    basis: speech text
+  # --- Master Plan ------------------------------------------------------------------------------------
+  - id: F27
+    topic: Master Plan
+    claim: In the Master Plan 2025, rapid transit is a zone for land used or intended mainly for rapid transit; the lines and station locations it shows are diagrammatic.
+    source: U1
+    locator: Table 1, zone 25 "Rapid Transit"
+    quote: "The notations used to denote the MRT/LRT lines and the locations of stations are diagrammatic."
+    status: VERIFIED
+    basis: document text
+  - id: F28
+    topic: Master Plan
+    claim: Areas shown on the Amendment Plan for rapid transit system structures are to be used for them whatever the underlying zoning.
+    source: U1
+    locator: para 4.1(ii)(c)
+    quote: "shall despite the zoning for the respective area be used for such specified uses unless otherwise allowed by the competent authority"
+    status: VERIFIED
+    basis: document text
+  - id: F29
+    topic: Master Plan
+    claim: The road zone covers existing and proposed roads, and further road reserves may be secured.
+    source: U1
+    locator: Table 1, zone 23 "Road"
+    quote: "Additional road reserves may be secured by the competent authority for any locality as may be deemed necessary."
+    status: VERIFIED
+    basis: document text
+  - id: F30
+    topic: Master Plan
+    claim: Uses of subterranean space may be approved even where they differ from the zoning of the land above.
+    source: U1
+    locator: para 4.8
+    quote: "The competent authority may consider and approve uses of subterranean spaces under land"
+    status: VERIFIED
+    basis: document text
+  - id: F31
+    topic: Master Plan
+    claim: The Master Plan 2025 was gazetted on 1 December 2025.
+    source: U2
+    locator: first paragraph
+    quote: "The Master Plan 2025 (MP2025) is officially gazetted today."
+    status: VERIFIED
+    basis: page text (dated 1 December 2025)
+  # --- Data ---------------------------------------------------------------------------------------------
+  - id: F32
+    topic: Data
+    claim: URA describes its Master Plan layers on data.gov.sg as indicative, including the land-use zoning and the rail line alignments.
+    source: D1
+    locator: dataset descriptions (metadata API) of d_7a03324bed531cdff76a16239b0e84e1 and d_6615da031916f656152eafa013748d73
+    quote: "Indicative land use zoning layer."
+    status: VERIFIED
+    basis: metadata text
+  - id: F33
+    topic: Data
+    claim: SLA's open cadastral layer shows approximate coordinated boundaries of surveyed lots; it is not a certified survey plan.
+    source: D1
+    locator: description of d_e7395d743076a2bcc487b0d12b9bf33b
+    quote: "approximate coordinated boundaries (nearest cm) of each surveyed land parcel"
+    status: VERIFIED
+    basis: metadata text; "not a certified survey plan" is the author's reading of "approximate"
+  # --- Not verified -------------------------------------------------------------------------------------
+  - id: F34
+    topic: Railway safeguarding
+    claim: Section 3 of the Rapid Transit Systems Act provides for the gazetting of railway areas.
+    source: L5
+    locator: not read
+    quote: ""
+    status: UNVERIFIED
+    basis: SSO not accessed; only LTA's description (F16) was read
+  - id: F35
+    topic: Railway protection
+    claim: The Rapid Transit Systems (Railway Protection, Restricted Activities) Regulations define the railway protection zone and list the restricted activities.
+    source: L5
+    locator: not read
+    quote: ""
+    status: UNVERIFIED
+    basis: SSO not accessed; the Code (T1) and FAQ (T2) cite these Regulations

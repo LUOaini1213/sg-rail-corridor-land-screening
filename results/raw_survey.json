@@ -1,0 +1,101 @@
+{
+  "corridor_selection": {
+    "candidate_pairs": 66,
+    "chosen": [
+      "BEDOK",
+      "BEDOK RESERVOIR"
+    ],
+    "chosen_pair": {
+      "a": "BEDOK",
+      "b": "BEDOK RESERVOIR",
+      "clearance_m": 374.4,
+      "distance_m": 1411.6
+    },
+    "chosen_rank": 8,
+    "exit_station_names_not_matched": 22,
+    "operating_mrt_stations_used": 127,
+    "rules": {
+      "distance_m": [
+        1400.0,
+        3600.0
+      ],
+      "min_clearance_m": 250.0,
+      "trim_m": 400.0
+    },
+    "stations_in_master_plan_layer": 272,
+    "stations_with_exits_matched": 185,
+    "top_candidates": [
+      {
+        "a": "BRADDELL",
+        "b": "WOODLEIGH",
+        "clearance_m": 397.2,
+        "distance_m": 2673.8
+      },
+      {
+        "a": "KEMBANGAN",
+        "b": "MARINE TERRACE",
+        "clearance_m": 394.7,
+        "distance_m": 1598.9
+      },
+      {
+        "a": "HAW PAR VILLA",
+        "b": "QUEENSTOWN",
+        "clearance_m": 391.0,
+        "distance_m": 3010.1
+      },
+      {
+        "a": "KAKI BUKIT",
+        "b": "KEMBANGAN",
+        "clearance_m": 386.9,
+        "distance_m": 1618.9
+      },
+      {
+        "a": "FARRER PARK",
+        "b": "NOVENA",
+        "clearance_m": 383.9,
+        "distance_m": 1460.1
+      },
+      {
+        "a": "REDHILL",
+        "b": "TELOK BLANGAH",
+        "clearance_m": 380.0,
+        "distance_m": 2247.0
+      },
+      {
+        "a": "BRADDELL",
+        "b": "POTONG PASIR",
+        "clearance_m": 379.1,
+        "distance_m": 2670.0
+      },
+      {
+        "a": "BEDOK",
+        "b": "BEDOK RESERVOIR",
+        "clearance_m": 374.4,
+        "distance_m": 1411.6
+      },
+      {
+        "a": "BEDOK",
+        "b": "SIGLAP",
+        "clearance_m": 372.6,
+        "distance_m": 1562.7
+      },
+      {
+        "a": "TOA PAYOH",
+        "b": "WOODLEIGH",
+        "clearance_m": 370.2,
+        "distance_m": 2695.6
+      }
+    ]
+  },
+  "layers": {
+    "cadastral_lots": 147491,
+    "land_use_polygons": 113413,
+    "mp_building_types": {
+      "H&MC": 63,
+      "HDB": 13827,
+      "HIGHER EDUCATIONAL INSTITUTION": 684,
+      "LANDMARK": 818
+    },
+    "mp_buildings": 15392
+  }
+}

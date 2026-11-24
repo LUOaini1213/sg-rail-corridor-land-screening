@@ -1,0 +1,72 @@
+{
+  "airspace_lots": 1,
+  "building_cross_check": {
+    "matched_by_osm": 237,
+    "min_share": 0.5,
+    "mp_buildings": 255,
+    "share": 0.929412
+  },
+  "crs_round_trip_max_error_m": 0.0,
+  "land_use": {
+    "classes": 17,
+    "count": 194,
+    "coverage": {
+      "box_m2": 2940000.0,
+      "covered_m2": 2940000.0,
+      "covered_share": 1.0,
+      "gap_m2": 0.0
+    },
+    "overlapping_pairs": 1
+  },
+  "lots": {
+    "count": 447,
+    "coverage": {
+      "box_m2": 2940000.0,
+      "covered_m2": 2939999.7056,
+      "covered_share": 1.0,
+      "gap_m2": 0.2944
+    },
+    "duplicate_keys": 0,
+    "invalid": 0,
+    "overlap_max_m2": 0.1492,
+    "overlapping_pairs": 1
+  },
+  "mp_buildings": {
+    "by_type": {
+      "HDB": 224,
+      "LANDMARK": 31
+    },
+    "count": 255,
+    "type_with_stray_spaces": 0,
+    "types": [
+      "HDB",
+      "LANDMARK"
+    ]
+  },
+  "osm_buildings": {
+    "count": 480,
+    "roof_structures": 21,
+    "top_tags": {
+      "commercial": 20,
+      "garage": 25,
+      "industrial": 16,
+      "residential": 247,
+      "roof": 21,
+      "yes": 121
+    }
+  },
+  "rail_lines": 10,
+  "state_land_layers": {
+    "state_land_agent": 0,
+    "state_land_vacant": 8,
+    "state_reserve": 0
+  },
+  "study_area_km2": 2.94,
+  "study_area_svy21": [
+    38300.0,
+    33700.0,
+    39700.0,
+    35800.0
+  ],
+  "underground_structures": 0
+}

@@ -1,0 +1,49 @@
+# ILLUSTRATIVE corridor. Fictional: it is NOT an announced, planned or proposed rail line, and no real
+# property is proposed for acquisition. The geometry was drawn by the author only to exercise the
+# screening method between two existing stations (Bedok, East West Line; Bedok Reservoir, Downtown Line).
+# Every number in this file is an ASSUMPTION or ILLUSTRATIVE choice, not a design value.
+# Coordinates: SVY21 / Singapore TM (EPSG:3414), metres.
+
+name: Illustrative link IL-1 (fictional)
+crs: EPSG:3414
+
+# Study area (x_min, y_min, x_max, y_max): data are extracted for this box.
+study_area: [38300, 33700, 39700, 35800]
+
+# The two existing stations the fictional link joins (names as in the URA Master Plan 2025 rail station
+# layer and the LTA MRT station exit layer).
+end_stations: [BEDOK, BEDOK RESERVOIR]
+
+geometry:
+  curve_radius_m: 300          # every bend is a circular arc of this radius (stylised; not checked against any design criteria)
+  station_box: {length_m: 150, width_m: 24}          # cut-and-cover box at each end of the alignment
+  bored_tunnel: {tube_outer_diameter_m: 6.6, tube_centre_spacing_m: 15.0}   # twin tubes between the boxes
+  tunnel_crown_level_m_shd: -5.0   # assumed level of the tube crown, metres relative to the Singapore Height Datum
+  worksite: {width_m: 40, extra_length_m: 10}        # temporary area beside each box (both ends of the box + extra_length_m)
+  launch_worksite_extra_width_m: 20                  # the box at the start (south) end is also the tunnel launch site
+  interchange_max_distance_m: 150                    # box must lie within this distance of the existing station outline
+
+# Horizontal variants: points of intersection (PIs), south (Bedok) to north (Bedok Reservoir).
+# The first PI is the south end of the south box; the last PI is the north end of the north box.
+variants:
+  A:
+    label: Direct
+    description: Straight line between the two boxes; shortest, passes under housing blocks.
+    pis: [[38790, 34100], [39050, 35375]]
+    worksite_side: {south: east, north: west}
+  B:
+    label: West, under the north-south road
+    description: Follows the road reserve north of Bedok, then turns north-east to the reservoir end.
+    pis: [[38800, 34100], [38815, 34880], [39100, 35360]]
+    worksite_side: {south: east, north: west}
+  C:
+    label: East, under the eastern road
+    description: Swings east to the road on the east side of the estate, then runs north and turns into the box.
+    pis: [[38800, 34100], [38800, 34400], [39260, 34760], [39260, 35050], [39140, 35375]]
+    worksite_side: {south: east, north: west}
+
+# Database update demo: a revision of variant A in which the alignment is moved (ILLUSTRATIVE).
+revision_demo:
+  base_variant: A
+  revised_label: A rev 1 (north box moved 40 m east)
+  revised_pis: [[38790, 34100], [39090, 35375]]

@@ -1,0 +1,15 @@
+# Python 3.11. Direct dependencies, pinned to the versions the committed results were made with.
+geopandas==1.2.0
+shapely==2.2.0
+pyproj==3.7.2
+pyogrio==0.13.0
+pandas==3.1.1
+numpy==2.4.6
+matplotlib==3.11.2
+openpyxl==3.1.5
+ezdxf==1.4.5
+folium==1.0.0
+reportlab==5.1.0
+pypdf==7.1.1
+PyYAML==6.0.4
+pytest==9.2.0

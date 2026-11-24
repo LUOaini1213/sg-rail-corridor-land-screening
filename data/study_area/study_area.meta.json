@@ -1,0 +1,96 @@
+{
+  "layers": {
+    "airspace_lots": 1,
+    "land_use": 194,
+    "lots": 447,
+    "mp_buildings": 255,
+    "osm_buildings": 480,
+    "rail_lines": 10,
+    "rail_stations": 2,
+    "state_land_agent": 0,
+    "state_land_vacant": 8,
+    "state_reserve": 0,
+    "station_exits": 5,
+    "underground_structures": 0
+  },
+  "sources": {
+    "lta_station_exit": {
+      "accessed": "2026-11-24T15:00:11+08:00",
+      "dataset_last_updated": "2026-10-18T10:06:43+08:00",
+      "osm_base": null,
+      "sha256": "7a57cb14cf7c621203938e944f99b41891284e5e67876c43d9f8f3ee3aa88ee6"
+    },
+    "mp25_building": {
+      "accessed": "2026-11-24T14:58:30+08:00",
+      "dataset_last_updated": "2026-01-30T10:07:16+08:00",
+      "osm_base": null,
+      "sha256": "cab747894fbe2d39ba9e8d5c0dc1616bd0fe04f6b323e37ba231df8010792462"
+    },
+    "mp25_land_use": {
+      "accessed": "2026-11-24T14:58:18+08:00",
+      "dataset_last_updated": "2026-10-23T10:08:31+08:00",
+      "osm_base": null,
+      "sha256": "4c5c1c2b3ff50d1a6654313f65fc885be60b4a7dd88abd0e42db3c551fbae434"
+    },
+    "mp25_rail_line": {
+      "accessed": "2026-11-24T14:58:41+08:00",
+      "dataset_last_updated": "2026-09-21T14:15:33+08:00",
+      "osm_base": null,
+      "sha256": "1b67917af2cc32e635a681aedb01513dbab0b272620930b30c5ae64c7311bb47"
+    },
+    "mp25_rail_station": {
+      "accessed": "2026-11-24T14:58:52+08:00",
+      "dataset_last_updated": "2026-09-21T14:17:39+08:00",
+      "osm_base": null,
+      "sha256": "179867a1a8cdcc588a25c32b406d5f09563d0e529030647381d5b2d3b0ae3185"
+    },
+    "mp25_underground": {
+      "accessed": "2026-11-24T14:59:03+08:00",
+      "dataset_last_updated": "2026-01-30T10:07:22+08:00",
+      "osm_base": null,
+      "sha256": "943ea8698189e7ad21abe89e6d5f142ffed716928458acef58982d2918ffe58b"
+    },
+    "osm_buildings": {
+      "accessed": "2026-11-24T15:10:44+08:00",
+      "dataset_last_updated": null,
+      "osm_base": "2026-11-24T07:09:15Z",
+      "sha256": "6157ec125b11e7a404a418cac8d8dbc3459154c1900a11316d721c5e022a4ed3"
+    },
+    "sla_airspace": {
+      "accessed": "2026-11-24T14:59:28+08:00",
+      "dataset_last_updated": "2026-11-19T10:06:46+08:00",
+      "osm_base": null,
+      "sha256": "048296923fe82d35d5f743017a151a5d3355b26defcc047a98604dc4508e8e0e"
+    },
+    "sla_cadastral": {
+      "accessed": "2026-11-24T14:59:17+08:00",
+      "dataset_last_updated": "2026-11-16T10:07:27+08:00",
+      "osm_base": null,
+      "sha256": "235d2209610358c661112e487856d2f599077b85a7c0566dd105a47960df521a"
+    },
+    "sla_managing_agent": {
+      "accessed": "2026-11-24T14:59:50+08:00",
+      "dataset_last_updated": "2026-11-03T10:06:46+08:00",
+      "osm_base": null,
+      "sha256": "40e0fb77b27686df18caaca5f8a057b3873bf3f4747679cd2ddffec237d59aca"
+    },
+    "sla_state_reserve": {
+      "accessed": "2026-11-24T15:00:00+08:00",
+      "dataset_last_updated": "2026-11-19T10:06:44+08:00",
+      "osm_base": null,
+      "sha256": "925f02647c138a7c44fb4753ee4ff5b3cd7eff0adaa8da1de1c0d56ef0b412b4"
+    },
+    "sla_vacant_state_land": {
+      "accessed": "2026-11-24T14:59:39+08:00",
+      "dataset_last_updated": "2026-11-13T10:06:50+08:00",
+      "osm_base": null,
+      "sha256": "2bc4f28881d7449386e8de235c831d137b4d93acb813bed1c980376acf1e4ed5"
+    }
+  },
+  "study_area_svy21": [
+    38300.0,
+    33700.0,
+    39700.0,
+    35800.0
+  ]
+}

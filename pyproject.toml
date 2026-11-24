@@ -1,0 +1,15 @@
+[project]
+name = "sg-rail-corridor-land-screening"
+version = "0.1.0"
+description = "Land screening of a fictional rail corridor on Singapore open data (personal portfolio desk study)"
+requires-python = ">=3.11"
+license = { text = "MIT (code); data: see LICENSE and docs/data_sources.md" }
+authors = [{ name = "Wenjie Luo (LUOaini1213)" }]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra"
+markers = [
+    "golden: compares committed results with a fresh run (excluded from mutation runs)",
+    "slow: runs the whole pipeline",
+]

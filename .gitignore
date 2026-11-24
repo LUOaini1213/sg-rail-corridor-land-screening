@@ -1,0 +1,12 @@
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+*.egg-info/
+# full downloads are large; only the manifest and clipped study-area extracts are committed
+data/raw/
+.mutation_backup/
+.mutation_tmp/
+*.gpkg-journal
+*.gpkg-wal
+*.gpkg-shm
