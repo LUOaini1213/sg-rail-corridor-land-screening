@@ -17,7 +17,8 @@ from corridor import config, docs  # noqa: E402
 def documents() -> dict[Path, str]:
     results = docs.load_results()
     out = {config.DOCS / "fact_sheet.md": docs.render_fact_sheet(),
-           config.DOCS / "data_sources.md": docs.render_data_sources(results)}
+           config.DOCS / "data_sources.md": docs.render_data_sources(results),
+           config.DOCS / "schema.md": docs.render_schema(results)}
     readme_t = config.DOCS / "templates" / "README.md"
     if readme_t.exists():
         out[config.ROOT / "README.md"] = docs.render(readme_t.read_text(encoding="utf-8"), results)

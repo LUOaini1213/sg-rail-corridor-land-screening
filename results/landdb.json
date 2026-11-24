@@ -1,0 +1,877 @@
+{
+  "interests_by_version": {
+    "A-v1": 105,
+    "A-v2": 105,
+    "B-v1": 111,
+    "C-v1": 131
+  },
+  "n_rules": 12,
+  "tables": {
+    "affected_areas": 194,
+    "alignment_versions": 4,
+    "change_log": 123,
+    "documents": 272,
+    "interests": 452,
+    "parcels": 447,
+    "steps": 1665
+  },
+  "update_demo": {
+    "base_version": "A-v1",
+    "changed": [
+      {
+        "interest_type": "permanent_subterranean",
+        "lot_key": "MK27-05554T",
+        "new_area_m2": 830.722287,
+        "new_instrument": "ACQ-STRATUM",
+        "old_area_m2": 806.298544,
+        "old_instrument": "ACQ-STRATUM"
+      },
+      {
+        "interest_type": "zone",
+        "lot_key": "MK27-05554T",
+        "new_area_m2": 1245.474512,
+        "new_instrument": "RAIL-ZONE",
+        "old_area_m2": 1269.898256,
+        "old_instrument": "RAIL-ZONE"
+      },
+      {
+        "interest_type": "zone",
+        "lot_key": "MK27-06875X",
+        "new_area_m2": 375.572355,
+        "new_instrument": "RAIL-ZONE",
+        "old_area_m2": 357.293536,
+        "old_instrument": "RAIL-ZONE"
+      },
+      {
+        "interest_type": "zone",
+        "lot_key": "MK27-07110V",
+        "new_area_m2": 2705.180998,
+        "new_instrument": "RAIL-ZONE",
+        "old_area_m2": 3002.568511,
+        "old_instrument": "RAIL-ZONE"
+      },
+      {
+        "interest_type": "permanent_subterranean",
+        "lot_key": "MK27-07244V",
+        "new_area_m2": 20.438668,
+        "new_instrument": "ACQ-STRATUM",
+        "old_area_m2": 4.73654,
+        "old_instrument": "ACQ-STRATUM"
+      },
+      {
+        "interest_type": "permanent_surface",
+        "lot_key": "MK27-07244V",
+        "new_area_m2": 399.793701,
+        "new_instrument": "ACQ-SURFACE",
+        "old_area_m2": 412.713615,
+        "old_instrument": "ACQ-SURFACE"
+      },
+      {
+        "interest_type": "temporary_surface",
+        "lot_key": "MK27-07244V",
+        "new_area_m2": 552.157048,
+        "new_instrument": "TEMP-OCC",
+        "old_area_m2": 685.973314,
+        "old_instrument": "TEMP-OCC"
+      },
+      {
+        "interest_type": "zone",
+        "lot_key": "MK27-07244V",
+        "new_area_m2": 1603.424179,
+        "new_instrument": "RAIL-ZONE",
+        "old_area_m2": 1528.76944,
+        "old_instrument": "RAIL-ZONE"
+      },
+      {
+        "interest_type": "temporary_surface",
+        "lot_key": "MK27-07245P",
+        "new_area_m2": 860.488609,
+        "new_instrument": "TEMP-OCC",
+        "old_area_m2": 789.363727,
+        "old_instrument": "TEMP-OCC"
+      },
+      {
+        "interest_type": "zone",
+        "lot_key": "MK27-07245P",
+        "new_area_m2": 860.488609,
+        "new_instrument": "RAIL-ZONE",
+        "old_area_m2": 789.363727,
+        "old_instrument": "RAIL-ZONE"
+      },
+      {
+        "interest_type": "permanent_subterranean",
+        "lot_key": "MK27-07494L",
+        "new_area_m2": 622.069802,
+        "new_instrument": "ACQ-STRATUM",
+        "old_area_m2": 580.805723,
+        "old_instrument": "ACQ-STRATUM"
+      },
+      {
+        "interest_type": "zone",
+        "lot_key": "MK27-07494L",
+        "new_area_m2": 1605.257248,
+        "new_instrument": "RAIL-ZONE",
+        "old_area_m2": 1646.521327,
+        "old_instrument": "RAIL-ZONE"
+      },
+      {
+        "interest_type": "zone",
+        "lot_key": "MK27-10724L",
+        "new_area_m2": 5768.381852,
+        "new_instrument": "RAIL-ZONE",
+        "old_area_m2": 5907.314928,
+        "old_instrument": "RAIL-ZONE"
+      },
+      {
+        "interest_type": "permanent_surface",
+        "lot_key": "MK27-10861L",
+        "new_area_m2": 1.012702,
+        "new_instrument": "ACQ-SURFACE",
+        "old_area_m2": 7.118243,
+        "old_instrument": "ACQ-SURFACE"
+      },
+      {
+        "interest_type": "zone",
+        "lot_key": "MK27-10861L",
+        "new_area_m2": 922.945148,
+        "new_instrument": "RAIL-ZONE",
+        "old_area_m2": 916.839607,
+        "old_instrument": "RAIL-ZONE"
+      },
+      {
+        "interest_type": "permanent_surface",
+        "lot_key": "MK27-10862C",
+        "new_area_m2": 99.720175,
+        "new_instrument": "ACQ-SURFACE",
+        "old_area_m2": 52.851498,
+        "old_instrument": "ACQ-SURFACE"
+      },
+      {
+        "interest_type": "temporary_surface",
+        "lot_key": "MK27-10862C",
+        "new_area_m2": 20.797475,
+        "new_instrument": "TEMP-OCC",
+        "old_area_m2": 67.666152,
+        "old_instrument": "TEMP-OCC"
+      },
+      {
+        "interest_type": "zone",
+        "lot_key": "MK27-10862C",
+        "new_area_m2": 20.797475,
+        "new_instrument": "RAIL-ZONE",
+        "old_area_m2": 67.666152,
+        "old_instrument": "RAIL-ZONE"
+      },
+      {
+        "interest_type": "permanent_surface",
+        "lot_key": "MK27-10863M",
+        "new_area_m2": 871.803642,
+        "new_instrument": "ACQ-SURFACE",
+        "old_area_m2": 727.716835,
+        "old_instrument": "ACQ-SURFACE"
+      },
+      {
+        "interest_type": "temporary_surface",
+        "lot_key": "MK27-10863M",
+        "new_area_m2": 5650.088246,
+        "new_instrument": "TEMP-OCC",
+        "old_area_m2": 5570.267887,
+        "old_instrument": "TEMP-OCC"
+      },
+      {
+        "interest_type": "zone",
+        "lot_key": "MK27-10863M",
+        "new_area_m2": 6147.774589,
+        "new_instrument": "RAIL-ZONE",
+        "old_area_m2": 6088.334396,
+        "old_instrument": "RAIL-ZONE"
+      },
+      {
+        "interest_type": "permanent_surface",
+        "lot_key": "MK27-10866P",
+        "new_area_m2": 1647.780196,
+        "new_instrument": "ACQ-SURFACE",
+        "old_area_m2": 1811.70055,
+        "old_instrument": "ACQ-SURFACE"
+      },
+      {
+        "interest_type": "zone",
+        "lot_key": "MK27-10866P",
+        "new_area_m2": 566.817004,
+        "new_instrument": "RAIL-ZONE",
+        "old_area_m2": 402.89665,
+        "old_instrument": "RAIL-ZONE"
+      },
+      {
+        "interest_type": "permanent_surface",
+        "lot_key": "MK27-10869K",
+        "new_area_m2": 8.900276,
+        "new_instrument": "ACQ-SURFACE",
+        "old_area_m2": 10.557658,
+        "old_instrument": "ACQ-SURFACE"
+      },
+      {
+        "interest_type": "zone",
+        "lot_key": "MK27-10869K",
+        "new_area_m2": 823.505074,
+        "new_instrument": "RAIL-ZONE",
+        "old_area_m2": 821.847692,
+        "old_instrument": "RAIL-ZONE"
+      },
+      {
+        "interest_type": "zone",
+        "lot_key": "MK27-10870T",
+        "new_area_m2": 508.318204,
+        "new_instrument": "RAIL-ZONE",
+        "old_area_m2": 511.532941,
+        "old_instrument": "RAIL-ZONE"
+      },
+      {
+        "interest_type": "temporary_surface",
+        "lot_key": "MK27-10871A",
+        "new_area_m2": 1487.430572,
+        "new_instrument": "TEMP-OCC",
+        "old_area_m2": 1430.593719,
+        "old_instrument": "TEMP-OCC"
+      },
+      {
+        "interest_type": "zone",
+        "lot_key": "MK27-10871A",
+        "new_area_m2": 1781.256996,
+        "new_instrument": "RAIL-ZONE",
+        "old_area_m2": 1778.962891,
+        "old_instrument": "RAIL-ZONE"
+      },
+      {
+        "interest_type": "temporary_surface",
+        "lot_key": "MK27-10873N",
+        "new_area_m2": 49.358363,
+        "new_instrument": "TEMP-OCC",
+        "old_area_m2": 47.613537,
+        "old_instrument": "TEMP-OCC"
+      },
+      {
+        "interest_type": "zone",
+        "lot_key": "MK27-10873N",
+        "new_area_m2": 49.358363,
+        "new_instrument": "RAIL-ZONE",
+        "old_area_m2": 47.613537,
+        "old_instrument": "RAIL-ZONE"
+      },
+      {
+        "interest_type": "temporary_surface",
+        "lot_key": "MK27-10874X",
+        "new_area_m2": 117.666436,
+        "new_instrument": "TEMP-OCC",
+        "old_area_m2": 98.472196,
+        "old_instrument": "TEMP-OCC"
+      },
+      {
+        "interest_type": "zone",
+        "lot_key": "MK27-10874X",
+        "new_area_m2": 117.666436,
+        "new_instrument": "RAIL-ZONE",
+        "old_area_m2": 98.472196,
+        "old_instrument": "RAIL-ZONE"
+      },
+      {
+        "interest_type": "permanent_subterranean",
+        "lot_key": "MK27-11036T",
+        "new_area_m2": 1276.440065,
+        "new_instrument": "ACQ-STRATUM",
+        "old_area_m2": 1227.219552,
+        "old_instrument": "ACQ-STRATUM"
+      },
+      {
+        "interest_type": "permanent_surface",
+        "lot_key": "MK27-11036T",
+        "new_area_m2": 504.613608,
+        "new_instrument": "ACQ-SURFACE",
+        "old_area_m2": 510.872573,
+        "old_instrument": "ACQ-SURFACE"
+      },
+      {
+        "interest_type": "temporary_surface",
+        "lot_key": "MK27-11036T",
+        "new_area_m2": 1462.013251,
+        "new_instrument": "TEMP-OCC",
+        "old_area_m2": 1509.96855,
+        "old_instrument": "TEMP-OCC"
+      },
+      {
+        "interest_type": "zone",
+        "lot_key": "MK27-11036T",
+        "new_area_m2": 9004.69029,
+        "new_instrument": "RAIL-ZONE",
+        "old_area_m2": 8803.52326,
+        "old_instrument": "RAIL-ZONE"
+      },
+      {
+        "interest_type": "zone",
+        "lot_key": "MK27-11038K",
+        "new_area_m2": 633.59429,
+        "new_instrument": "RAIL-ZONE",
+        "old_area_m2": 642.288794,
+        "old_instrument": "RAIL-ZONE"
+      },
+      {
+        "interest_type": "zone",
+        "lot_key": "MK27-11068A",
+        "new_area_m2": 671.975149,
+        "new_instrument": "RAIL-ZONE",
+        "old_area_m2": 667.818734,
+        "old_instrument": "RAIL-ZONE"
+      },
+      {
+        "interest_type": "zone",
+        "lot_key": "MK27-11089L",
+        "new_area_m2": 566.433348,
+        "new_instrument": "RAIL-ZONE",
+        "old_area_m2": 794.251572,
+        "old_instrument": "RAIL-ZONE"
+      },
+      {
+        "interest_type": "zone",
+        "lot_key": "MK27-11175K",
+        "new_area_m2": 2362.282154,
+        "new_instrument": "RAIL-ZONE",
+        "old_area_m2": 1519.695182,
+        "old_instrument": "RAIL-ZONE"
+      },
+      {
+        "interest_type": "zone",
+        "lot_key": "MK28-01463M",
+        "new_area_m2": 838.473003,
+        "new_instrument": "RAIL-ZONE",
+        "old_area_m2": 773.55532,
+        "old_instrument": "RAIL-ZONE"
+      },
+      {
+        "interest_type": "zone",
+        "lot_key": "MK28-01464W",
+        "new_area_m2": 835.851139,
+        "new_instrument": "RAIL-ZONE",
+        "old_area_m2": 540.99681,
+        "old_instrument": "RAIL-ZONE"
+      },
+      {
+        "interest_type": "zone",
+        "lot_key": "MK28-01466P",
+        "new_area_m2": 655.000466,
+        "new_instrument": "RAIL-ZONE",
+        "old_area_m2": 824.974465,
+        "old_instrument": "RAIL-ZONE"
+      },
+      {
+        "interest_type": "permanent_subterranean",
+        "lot_key": "MK28-01467T",
+        "new_area_m2": 71.493442,
+        "new_instrument": "ACQ-STRATUM",
+        "old_area_m2": 296.923198,
+        "old_instrument": "ACQ-STRATUM"
+      },
+      {
+        "interest_type": "zone",
+        "lot_key": "MK28-01467T",
+        "new_area_m2": 835.643744,
+        "new_instrument": "RAIL-ZONE",
+        "old_area_m2": 910.844953,
+        "old_instrument": "RAIL-ZONE"
+      },
+      {
+        "interest_type": "zone",
+        "lot_key": "MK28-01614T",
+        "new_area_m2": 734.196747,
+        "new_instrument": "RAIL-ZONE",
+        "old_area_m2": 738.77005,
+        "old_instrument": "RAIL-ZONE"
+      },
+      {
+        "interest_type": "permanent_subterranean",
+        "lot_key": "MK28-01615A",
+        "new_area_m2": 361.062786,
+        "new_instrument": "ACQ-STRATUM",
+        "old_area_m2": 938.193796,
+        "old_instrument": "ACQ-STRATUM"
+      },
+      {
+        "interest_type": "zone",
+        "lot_key": "MK28-01615A",
+        "new_area_m2": 2130.970015,
+        "new_instrument": "RAIL-ZONE",
+        "old_area_m2": 1553.839005,
+        "old_instrument": "RAIL-ZONE"
+      },
+      {
+        "interest_type": "permanent_subterranean",
+        "lot_key": "MK28-01623C",
+        "new_area_m2": 369.959184,
+        "new_instrument": "ACQ-STRATUM",
+        "old_area_m2": 158.841106,
+        "old_instrument": "ACQ-STRATUM"
+      },
+      {
+        "interest_type": "zone",
+        "lot_key": "MK28-01623C",
+        "new_area_m2": 1333.471086,
+        "new_instrument": "RAIL-ZONE",
+        "old_area_m2": 1037.898277,
+        "old_instrument": "RAIL-ZONE"
+      },
+      {
+        "interest_type": "zone",
+        "lot_key": "MK28-01624M",
+        "new_area_m2": 1052.643059,
+        "new_instrument": "RAIL-ZONE",
+        "old_area_m2": 891.814218,
+        "old_instrument": "RAIL-ZONE"
+      },
+      {
+        "interest_type": "zone",
+        "lot_key": "MK28-01837T",
+        "new_area_m2": 2297.680009,
+        "new_instrument": "RAIL-ZONE",
+        "old_area_m2": 2508.281141,
+        "old_instrument": "RAIL-ZONE"
+      },
+      {
+        "interest_type": "zone",
+        "lot_key": "MK28-02011K",
+        "new_area_m2": 895.961116,
+        "new_instrument": "RAIL-ZONE",
+        "old_area_m2": 673.291327,
+        "old_instrument": "RAIL-ZONE"
+      },
+      {
+        "interest_type": "zone",
+        "lot_key": "MK28-02012N",
+        "new_area_m2": 631.86657,
+        "new_instrument": "RAIL-ZONE",
+        "old_area_m2": 413.025895,
+        "old_instrument": "RAIL-ZONE"
+      },
+      {
+        "interest_type": "permanent_subterranean",
+        "lot_key": "MK28-02607L",
+        "new_area_m2": 783.485228,
+        "new_instrument": "ACQ-STRATUM",
+        "old_area_m2": 772.244376,
+        "old_instrument": "ACQ-STRATUM"
+      },
+      {
+        "interest_type": "zone",
+        "lot_key": "MK28-02607L",
+        "new_area_m2": 4426.548986,
+        "new_instrument": "RAIL-ZONE",
+        "old_area_m2": 4281.508142,
+        "old_instrument": "RAIL-ZONE"
+      },
+      {
+        "interest_type": "permanent_surface",
+        "lot_key": "MK28-02654X",
+        "new_area_m2": 1572.97945,
+        "new_instrument": "ACQ-SURFACE",
+        "old_area_m2": 1069.024642,
+        "old_instrument": "ACQ-SURFACE"
+      },
+      {
+        "interest_type": "temporary_surface",
+        "lot_key": "MK28-02654X",
+        "new_area_m2": 1937.155597,
+        "new_instrument": "TEMP-OCC",
+        "old_area_m2": 602.9548,
+        "old_instrument": "TEMP-OCC"
+      },
+      {
+        "interest_type": "zone",
+        "lot_key": "MK28-02654X",
+        "new_area_m2": 6331.515175,
+        "new_instrument": "RAIL-ZONE",
+        "old_area_m2": 4494.711062,
+        "old_instrument": "RAIL-ZONE"
+      },
+      {
+        "interest_type": "temporary_surface",
+        "lot_key": "MK28-02679A",
+        "new_area_m2": 483.654764,
+        "new_instrument": "TEMP-OCC",
+        "old_area_m2": 1655.321686,
+        "old_instrument": "TEMP-OCC"
+      },
+      {
+        "interest_type": "zone",
+        "lot_key": "MK28-02679A",
+        "new_area_m2": 1195.475832,
+        "new_instrument": "RAIL-ZONE",
+        "old_area_m2": 2835.926291,
+        "old_instrument": "RAIL-ZONE"
+      },
+      {
+        "interest_type": "zone",
+        "lot_key": "MK28-04686A",
+        "new_area_m2": 2877.451163,
+        "new_instrument": "RAIL-ZONE",
+        "old_area_m2": 3635.807867,
+        "old_instrument": "RAIL-ZONE"
+      },
+      {
+        "interest_type": "permanent_subterranean",
+        "lot_key": "MK28-04701N",
+        "new_area_m2": 2093.393971,
+        "new_instrument": "ACQ-STRATUM",
+        "old_area_m2": 2175.564987,
+        "old_instrument": "ACQ-STRATUM"
+      },
+      {
+        "interest_type": "zone",
+        "lot_key": "MK28-04701N",
+        "new_area_m2": 8734.120363,
+        "new_instrument": "RAIL-ZONE",
+        "old_area_m2": 9691.043672,
+        "old_instrument": "RAIL-ZONE"
+      },
+      {
+        "interest_type": "zone",
+        "lot_key": "MK28-06278X",
+        "new_area_m2": 2319.825936,
+        "new_instrument": "RAIL-ZONE",
+        "old_area_m2": 5665.235319,
+        "old_instrument": "RAIL-ZONE"
+      },
+      {
+        "interest_type": "permanent_subterranean",
+        "lot_key": "MK28-06843X",
+        "new_area_m2": 1799.32203,
+        "new_instrument": "ACQ-STRATUM",
+        "old_area_m2": 1775.976223,
+        "old_instrument": "ACQ-STRATUM"
+      },
+      {
+        "interest_type": "zone",
+        "lot_key": "MK28-06843X",
+        "new_area_m2": 9996.23759,
+        "new_instrument": "RAIL-ZONE",
+        "old_area_m2": 8818.8189,
+        "old_instrument": "RAIL-ZONE"
+      },
+      {
+        "interest_type": "permanent_surface",
+        "lot_key": "MK28-06845C",
+        "new_area_m2": 490.509093,
+        "new_instrument": "ACQ-SURFACE",
+        "old_area_m2": 440.875175,
+        "old_instrument": "ACQ-SURFACE"
+      },
+      {
+        "interest_type": "temporary_surface",
+        "lot_key": "MK28-06845C",
+        "new_area_m2": 744.819169,
+        "new_instrument": "TEMP-OCC",
+        "old_area_m2": 661.345212,
+        "old_instrument": "TEMP-OCC"
+      },
+      {
+        "interest_type": "zone",
+        "lot_key": "MK28-06845C",
+        "new_area_m2": 2472.64656,
+        "new_instrument": "RAIL-ZONE",
+        "old_area_m2": 2200.409015,
+        "old_instrument": "RAIL-ZONE"
+      },
+      {
+        "interest_type": "permanent_subterranean",
+        "lot_key": "MK28-06908T",
+        "new_area_m2": 3602.9937,
+        "new_instrument": "ACQ-STRATUM",
+        "old_area_m2": 3306.887207,
+        "old_instrument": "ACQ-STRATUM"
+      },
+      {
+        "interest_type": "zone",
+        "lot_key": "MK28-06908T",
+        "new_area_m2": 14400.201363,
+        "new_instrument": "RAIL-ZONE",
+        "old_area_m2": 14826.537309,
+        "old_instrument": "RAIL-ZONE"
+      },
+      {
+        "interest_type": "permanent_subterranean",
+        "lot_key": "MK28-06911T",
+        "new_area_m2": 5011.983364,
+        "new_instrument": "ACQ-STRATUM",
+        "old_area_m2": 4502.27454,
+        "old_instrument": "ACQ-STRATUM"
+      },
+      {
+        "interest_type": "zone",
+        "lot_key": "MK28-06911T",
+        "new_area_m2": 23049.254069,
+        "new_instrument": "RAIL-ZONE",
+        "old_area_m2": 19602.100535,
+        "old_instrument": "RAIL-ZONE"
+      },
+      {
+        "interest_type": "zone",
+        "lot_key": "MK28-07167W",
+        "new_area_m2": 50.975888,
+        "new_instrument": "RAIL-ZONE",
+        "old_area_m2": 3185.433739,
+        "old_instrument": "RAIL-ZONE"
+      },
+      {
+        "interest_type": "permanent_surface",
+        "lot_key": "MK28-07174A",
+        "new_area_m2": 1138.367376,
+        "new_instrument": "ACQ-SURFACE",
+        "old_area_m2": 1155.835581,
+        "old_instrument": "ACQ-SURFACE"
+      },
+      {
+        "interest_type": "temporary_surface",
+        "lot_key": "MK28-07174A",
+        "new_area_m2": 2628.786708,
+        "new_instrument": "TEMP-OCC",
+        "old_area_m2": 1522.395042,
+        "old_instrument": "TEMP-OCC"
+      },
+      {
+        "interest_type": "zone",
+        "lot_key": "MK28-07174A",
+        "new_area_m2": 8352.353154,
+        "new_instrument": "RAIL-ZONE",
+        "old_area_m2": 9212.138719,
+        "old_instrument": "RAIL-ZONE"
+      },
+      {
+        "interest_type": "permanent_surface",
+        "lot_key": "MK28-07177X",
+        "new_area_m2": 127.524904,
+        "new_instrument": "ACQ-SURFACE",
+        "old_area_m2": 192.312307,
+        "old_instrument": "ACQ-SURFACE"
+      },
+      {
+        "interest_type": "temporary_surface",
+        "lot_key": "MK28-07177X",
+        "new_area_m2": 295.274802,
+        "new_instrument": "TEMP-OCC",
+        "old_area_m2": 277.988895,
+        "old_instrument": "TEMP-OCC"
+      },
+      {
+        "interest_type": "zone",
+        "lot_key": "MK28-07177X",
+        "new_area_m2": 1966.538395,
+        "new_instrument": "RAIL-ZONE",
+        "old_area_m2": 1179.104143,
+        "old_instrument": "RAIL-ZONE"
+      },
+      {
+        "interest_type": "permanent_subterranean",
+        "lot_key": "MK28-07502X",
+        "new_area_m2": 2103.259741,
+        "new_instrument": "ACQ-STRATUM",
+        "old_area_m2": 970.415053,
+        "old_instrument": "ACQ-STRATUM"
+      },
+      {
+        "interest_type": "zone",
+        "lot_key": "MK28-07502X",
+        "new_area_m2": 12487.797587,
+        "new_instrument": "RAIL-ZONE",
+        "old_area_m2": 9739.990104,
+        "old_instrument": "RAIL-ZONE"
+      },
+      {
+        "interest_type": "permanent_subterranean",
+        "lot_key": "MK28-07556P",
+        "new_area_m2": 821.770098,
+        "new_instrument": "ACQ-STRATUM",
+        "old_area_m2": 1358.120186,
+        "old_instrument": "ACQ-STRATUM"
+      },
+      {
+        "interest_type": "zone",
+        "lot_key": "MK28-07556P",
+        "new_area_m2": 6527.531512,
+        "new_instrument": "RAIL-ZONE",
+        "old_area_m2": 8791.003936,
+        "old_instrument": "RAIL-ZONE"
+      },
+      {
+        "interest_type": "permanent_subterranean",
+        "lot_key": "MK28-07823P",
+        "new_area_m2": 1402.64352,
+        "new_instrument": "STATE-STRATUM",
+        "old_area_m2": 1521.650146,
+        "old_instrument": "STATE-STRATUM"
+      },
+      {
+        "interest_type": "permanent_surface",
+        "lot_key": "MK28-07823P",
+        "new_area_m2": 270.619178,
+        "new_instrument": "STATE-SURFACE",
+        "old_area_m2": 396.863349,
+        "old_instrument": "STATE-SURFACE"
+      },
+      {
+        "interest_type": "temporary_surface",
+        "lot_key": "MK28-07823P",
+        "new_area_m2": 710.308961,
+        "new_instrument": "TOL",
+        "old_area_m2": 959.370132,
+        "old_instrument": "TOL"
+      },
+      {
+        "interest_type": "zone",
+        "lot_key": "MK28-07823P",
+        "new_area_m2": 8844.88901,
+        "new_instrument": "RAIL-ZONE",
+        "old_area_m2": 10394.264989,
+        "old_instrument": "RAIL-ZONE"
+      }
+    ],
+    "n_changed": 89,
+    "n_new": 11,
+    "n_out": 11,
+    "n_steps_to_review": 1,
+    "new_in_scope": [
+      {
+        "interest_type": "permanent_subterranean",
+        "lot_key": "MK28-01463M"
+      },
+      {
+        "interest_type": "permanent_subterranean",
+        "lot_key": "MK28-01464W"
+      },
+      {
+        "interest_type": "permanent_subterranean",
+        "lot_key": "MK28-01624M"
+      },
+      {
+        "interest_type": "zone",
+        "lot_key": "MK28-02524W"
+      },
+      {
+        "interest_type": "zone",
+        "lot_key": "MK28-03894K"
+      },
+      {
+        "interest_type": "zone",
+        "lot_key": "MK28-06844L"
+      },
+      {
+        "interest_type": "zone",
+        "lot_key": "MK28-06901X"
+      },
+      {
+        "interest_type": "zone",
+        "lot_key": "MK28-06902L"
+      },
+      {
+        "interest_type": "zone",
+        "lot_key": "MK28-07170W"
+      },
+      {
+        "interest_type": "zone",
+        "lot_key": "MK28-07171V"
+      },
+      {
+        "interest_type": "zone",
+        "lot_key": "MK28-07501N"
+      }
+    ],
+    "new_lots": [
+      "MK28-01463M (permanent subterranean)",
+      "MK28-01464W (permanent subterranean)",
+      "MK28-01624M (permanent subterranean)",
+      "MK28-02524W (zone)",
+      "MK28-03894K (zone)",
+      "MK28-06844L (zone)",
+      "MK28-06901X (zone)",
+      "MK28-06902L (zone)",
+      "MK28-07170W (zone)",
+      "MK28-07171V (zone)",
+      "MK28-07501N (zone)"
+    ],
+    "new_version": "A-v2",
+    "out_lots": [
+      "MK28-01466P (permanent subterranean)",
+      "MK28-01837T (permanent subterranean)",
+      "MK28-01856K (zone)",
+      "MK28-01857N (zone)",
+      "MK28-02679A (permanent surface)",
+      "MK28-04686A (permanent subterranean)",
+      "MK28-06278X (permanent subterranean)",
+      "MK28-07167W (temporary surface)",
+      "MK28-07176N (zone)",
+      "MK28-07443N (zone)",
+      "MK28-07824T (zone)"
+    ],
+    "out_of_scope": [
+      {
+        "interest_type": "permanent_subterranean",
+        "lot_key": "MK28-01466P"
+      },
+      {
+        "interest_type": "permanent_subterranean",
+        "lot_key": "MK28-01837T"
+      },
+      {
+        "interest_type": "zone",
+        "lot_key": "MK28-01856K"
+      },
+      {
+        "interest_type": "zone",
+        "lot_key": "MK28-01857N"
+      },
+      {
+        "interest_type": "permanent_surface",
+        "lot_key": "MK28-02679A"
+      },
+      {
+        "interest_type": "permanent_subterranean",
+        "lot_key": "MK28-04686A"
+      },
+      {
+        "interest_type": "permanent_subterranean",
+        "lot_key": "MK28-06278X"
+      },
+      {
+        "interest_type": "temporary_surface",
+        "lot_key": "MK28-07167W"
+      },
+      {
+        "interest_type": "zone",
+        "lot_key": "MK28-07176N"
+      },
+      {
+        "interest_type": "zone",
+        "lot_key": "MK28-07443N"
+      },
+      {
+        "interest_type": "zone",
+        "lot_key": "MK28-07824T"
+      }
+    ],
+    "revised_label": "A rev 1: north end moved 40 m east",
+    "steps_to_review": [
+      "A-v1:MK28-01466P:ACQ-STRATUM:1"
+    ]
+  },
+  "validation": {
+    "V01": 0,
+    "V02": 0,
+    "V03": 0,
+    "V04": 0,
+    "V05": 0,
+    "V06": 0,
+    "V07": 0,
+    "V08": 0,
+    "V09": 0,
+    "V10": 0,
+    "V11": 0,
+    "V12": 0
+  },
+  "validation_failures": 0
+}

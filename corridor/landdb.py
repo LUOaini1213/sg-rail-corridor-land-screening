@@ -15,7 +15,7 @@ from pathlib import Path
 
 import geopandas as gpd
 import pandas as pd
-import pyogrio
+
 
 from . import components as comp_mod
 from . import config, screening
@@ -48,6 +48,73 @@ STEP_TEMPLATES: dict[str, list[tuple[str, str, bool]]] = {
                   ("Track the gazette of the railway area", "F16", False)],
 }
 STEP_STATUSES = ("not_started", "in_progress", "done", "not_applicable", "withdrawn")
+
+# Attribute tables: (column, SQL type and constraint, meaning). Spatial layers are described in SPATIAL.
+SPATIAL = {
+    "parcels": {"description": "Cadastral lots in the study area with land use and the State-land indicator", "columns": [
+        ("lot_key", "TEXT, unique", "SLA lot key (mukim or town subdivision, lot number); identifier only"),
+        ("lot_area_m2", "REAL", "Plan area of the lot polygon (SVY21), not the title area"),
+        ("land_use", "TEXT", "Master Plan 2025 zone covering the largest share of the lot"),
+        ("land_use_share", "REAL", "Share of the lot under that zone"),
+        ("state_land_share", "REAL", "Share of the lot covered by SLA's open State-land layers"),
+        ("state_land_indicated", "INTEGER 0/1", "1 when that share is at least one half"),
+        ("tenure_evidence", "TEXT", "What the open data say about tenure"),
+        ("source", "TEXT", "Origin of the geometry"),
+        ("geometry", "POLYGON / MULTIPOLYGON, EPSG:3414", "Lot boundary as published (approximate)")]},
+    "affected_areas": {"description": "Pieces of each footprint component in each lot, per alignment version", "columns": [
+        ("area_id", "TEXT, unique", "version:component:lot:n"),
+        ("version_id", "TEXT", "Alignment version"), ("component_id", "TEXT", "Box, tunnel or worksite"),
+        ("component_type", "TEXT", "station_box, bored_tunnel or worksite"),
+        ("take", "TEXT", "permanent_surface, permanent_subterranean or temporary_surface"),
+        ("lot_key", "TEXT", "Lot"), ("area_m2", "REAL", "Plan area of the piece"),
+        ("geometry", "POLYGON / MULTIPOLYGON, EPSG:3414", "The piece")]},
+}
+
+SCHEMA: dict[str, dict] = {
+    "alignment_versions": {"description": "Each alignment variant or revision the database has seen", "columns": [
+        ("version_id", "TEXT NOT NULL UNIQUE", "e.g. A-v1"), ("variant", "TEXT NOT NULL", "Variant key"),
+        ("label", "TEXT", "Description"), ("pis_json", "TEXT NOT NULL", "Points of intersection, SVY21"),
+        ("geometry_sha", "TEXT NOT NULL", "Hash of the PIs"), ("status", "TEXT NOT NULL", "baseline, option, revision or superseded"),
+        ("created", "TEXT", "Date stamped on the record")]},
+    "interests": {"description": "Land interest needed in a lot for one alignment version", "columns": [
+        ("interest_id", "TEXT NOT NULL UNIQUE", "version:lot:instrument"),
+        ("version_id", "TEXT NOT NULL REFERENCES alignment_versions(version_id)", "Alignment version"),
+        ("lot_key", "TEXT NOT NULL REFERENCES parcels(lot_key)", "Lot"),
+        ("interest_type", "TEXT NOT NULL", "permanent_surface, permanent_subterranean, temporary_surface or zone"),
+        ("instrument_code", "TEXT NOT NULL", "Mechanism code (see README)"), ("instrument_text", "TEXT", "Mechanism in words"),
+        ("agency", "TEXT", "Agency to liaise with, per the public sources"), ("area_m2", "REAL NOT NULL", "Plan area"),
+        ("stratum_top_m_shd", "REAL", "Top of a subterranean stratum, m SHD"),
+        ("stratum_bottom_m_shd", "REAL", "Bottom of a subterranean stratum, m SHD"),
+        ("status", "TEXT NOT NULL", "proposed, superseded or withdrawn"),
+        ("start_date", "TEXT", "Start of temporary occupation (SYNTHETIC)"), ("end_date", "TEXT", "End of temporary occupation (SYNTHETIC)"),
+        ("created", "TEXT", "Date stamped on the record"), ("updated", "TEXT", "Date of the last change")]},
+    "steps": {"description": "Status of each acquisition or occupation step of an interest", "columns": [
+        ("step_id", "TEXT NOT NULL UNIQUE", "interest:seq"),
+        ("interest_id", "TEXT NOT NULL REFERENCES interests(interest_id)", "Interest"),
+        ("seq", "INTEGER NOT NULL", "Order"), ("step_name", "TEXT NOT NULL", "Step"),
+        ("source", "TEXT NOT NULL", "Fact-sheet row the step comes from, or ILLUSTRATIVE"),
+        ("mandatory", "INTEGER NOT NULL", "1 if the step cannot be skipped"),
+        ("status", "TEXT NOT NULL", "not_started, in_progress, done, not_applicable or withdrawn"),
+        ("date", "TEXT", "Date of the status (SYNTHETIC)"), ("note", "TEXT", "Note")]},
+    "documents": {"description": "Documents to obtain or held for an interest (SYNTHETIC placeholders)", "columns": [
+        ("doc_id", "TEXT NOT NULL UNIQUE", "Identifier"),
+        ("interest_id", "TEXT REFERENCES interests(interest_id)", "Interest"),
+        ("lot_key", "TEXT REFERENCES parcels(lot_key)", "Lot"), ("doc_type", "TEXT NOT NULL", "Kind of document"),
+        ("title", "TEXT", "Title"), ("status", "TEXT NOT NULL", "to_obtain, received or not_applicable"),
+        ("reference", "TEXT", "Reference"), ("date", "TEXT", "Date"), ("note", "TEXT", "Note")]},
+    "change_log": {"description": "Every change made after the first load, with the reason", "columns": [
+        ("change_id", "INTEGER NOT NULL UNIQUE", "Sequence"), ("timestamp", "TEXT NOT NULL", "Date stamped on the change"),
+        ("version_id", "TEXT", "Alignment version that caused it"), ("table_name", "TEXT NOT NULL", "Table"),
+        ("record_id", "TEXT NOT NULL", "Record"), ("field", "TEXT NOT NULL", "Field"),
+        ("old_value", "TEXT", "Before"), ("new_value", "TEXT", "After"), ("reason", "TEXT", "Why")]},
+    "validation_rules": {"description": "Rules checked by corridor.landdb.LandDB.validate()", "columns": [
+        ("rule_id", "TEXT NOT NULL UNIQUE", "Rule"), ("description", "TEXT NOT NULL", "What is checked"),
+        ("severity", "TEXT NOT NULL", "error or warning")]},
+    "metadata": {"description": "Schema version, CRS and disclaimer", "columns": [
+        ("key", "TEXT NOT NULL UNIQUE", "Key"), ("value", "TEXT", "Value")]},
+}
+for _t in SCHEMA.values():
+    _t["columns"] = [c if len(c) == 3 else (c[0], c[1], "") for c in _t["columns"]]
 
 VALIDATION_RULES = [
     ("V01", "Primary keys are unique in every table", "error"),
@@ -324,6 +391,7 @@ class LandDB:
 
     # -- persistence ---------------------------------------------------------------------------------
     def write(self, path: Path) -> None:
+        """Spatial layers through GDAL; attribute tables with explicit types, keys and foreign keys."""
         path = Path(path)
         path.parent.mkdir(parents=True, exist_ok=True)
         if path.exists():
@@ -337,11 +405,33 @@ class LandDB:
             {"key": "disclaimer", "value": "ILLUSTRATIVE fictional corridor; statuses, dates and documents are SYNTHETIC; not legal advice"},
         ])
         tables = {"alignment_versions": self.versions, "interests": self.interests, "steps": self.steps,
-                  "documents": self.documents, "change_log": pd.DataFrame(self.changes),
+                  "documents": self.documents, "change_log": pd.DataFrame(self.changes, columns=[c[0] for c in SCHEMA["change_log"]["columns"]]),
                   "validation_rules": pd.DataFrame(VALIDATION_RULES, columns=["rule_id", "description", "severity"]),
                   "metadata": meta}
-        for name, df in tables.items():
-            pyogrio.write_dataframe(df.astype(object).where(df.notna(), None) if len(df) else df, path, layer=name, driver="GPKG")
+        con = sqlite3.connect(path)
+        try:
+            con.execute("PRAGMA foreign_keys = ON")
+            con.execute("CREATE UNIQUE INDEX parcels_lot_key ON parcels(lot_key)")
+            con.execute("CREATE UNIQUE INDEX affected_areas_area_id ON affected_areas(area_id)")
+            for name, df in tables.items():
+                spec = SCHEMA[name]
+                cols = spec["columns"]
+                defs = ["fid INTEGER PRIMARY KEY AUTOINCREMENT"] + [f'"{c}" {t}' for c, t, _ in cols] + spec.get("constraints", [])
+                con.execute(f'CREATE TABLE "{name}" ({", ".join(defs)})')
+                names = [c for c, _, _ in cols]
+                rows = [tuple(None if (isinstance(v, float) and v != v) else v for v in r)
+                        for r in (df[names].astype(object).where(df[names].notna(), None).itertuples(index=False, name=None)
+                                  if len(df) else [])]
+                con.executemany(f'INSERT INTO "{name}" ({", ".join(chr(34) + n + chr(34) for n in names)}) '
+                                f'VALUES ({", ".join("?" for _ in names)})', rows)
+                con.execute("INSERT INTO gpkg_contents (table_name, data_type, identifier, description, last_change) "
+                            "VALUES (?, 'attributes', ?, ?, ?)", (name, name, spec["description"], AS_OF + "T00:00:00.000Z"))
+            con.commit()
+            bad = con.execute("PRAGMA foreign_key_check").fetchall()
+            if bad:
+                raise ValueError(f"foreign key violations: {bad[:5]}")
+        finally:
+            con.close()
 
     @staticmethod
     def read_table(path: Path, name: str) -> pd.DataFrame:

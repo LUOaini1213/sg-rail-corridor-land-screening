@@ -45,5 +45,5 @@ variants:
 # Database update demo: a revision of variant A in which the alignment is moved (ILLUSTRATIVE).
 revision_demo:
   base_variant: A
-  revised_label: A rev 1 (north box moved 40 m east)
+  revised_label: "A rev 1: north end moved 40 m east"
   revised_pis: [[38790, 34100], [39090, 35375]]

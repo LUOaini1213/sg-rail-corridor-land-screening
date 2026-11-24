@@ -95,17 +95,22 @@ def build_landdb(full: dict, attrs: pd.DataFrame, study: dict) -> tuple[landdb.L
     db = landdb.LandDB(landdb.parcels_table(study["lots"], attrs))
     for k, v in cfg["variants"].items():
         db.add_version(f"{k}-v1", k, v["label"], v["pis"], full[k], attrs, status="baseline" if k == "A" else "option")
-    # SYNTHETIC progress on the baseline before the alignment changes
-    ints = db.interests[db.interests["version_id"] == "A-v1"]
-    acq = ints[ints["instrument_code"].isin(["ACQ-SURFACE", "ACQ-STRATUM"])].sort_values("interest_id")
-    for iid in acq["interest_id"].head(4):
-        db.set_step(f"{iid}:1", "done", "2026-11-20", "SYNTHETIC demo progress")
-        db.set_step(f"{iid}:2", "in_progress", "2026-11-22", "SYNTHETIC demo progress")
     rev = cfg["revision_demo"]
     base = cfg["variants"][rev["base_variant"]]
     spec = dict(base, pis=rev["revised_pis"])
     al2, comps2 = comp_mod.build_variant(rev["base_variant"], spec, cfg["geometry"])
     res2 = screening.screen_variant(rev["base_variant"], al2, comps2, study, attrs)
+    # SYNTHETIC progress on the baseline before the alignment changes: step 1 done and step 2 under way on the
+    # first two acquisition interests that continue after the revision, and on the first one the revision drops,
+    # so that both behaviours of the update (carry over; flag for review) show in the demo
+    ints = db.interests[db.interests["version_id"] == "A-v1"]
+    acq = ints[ints["instrument_code"].isin(["ACQ-SURFACE", "ACQ-STRATUM"])].sort_values("interest_id")
+    kept = set(zip(res2["pieces"]["LOT_KEY"], res2["pieces"]["take"]))
+    cont = [r.interest_id for r in acq.itertuples() if (r.lot_key, r.interest_type) in kept][:2]
+    gone = [r.interest_id for r in acq.itertuples() if (r.lot_key, r.interest_type) not in kept][:1]
+    for iid in cont + gone:
+        db.set_step(f"{iid}:1", "done", "2026-11-20", "SYNTHETIC demo progress")
+        db.set_step(f"{iid}:2", "in_progress", "2026-11-22", "SYNTHETIC demo progress")
     upd = db.revise("A-v1", "A-v2", rev["base_variant"], rev["revised_label"], rev["revised_pis"], res2, attrs)
     return db, upd
 
@@ -141,9 +146,12 @@ def run(write_outputs: bool = True) -> dict:
         "interests_by_version": {k: int(v) for k, v in db.interests.groupby("version_id").size().items()},
         "validation": {k: len(v) for k, v in val.items()},
         "validation_failures": int(sum(len(v) for v in val.values())),
+        "n_rules": len(landdb.VALIDATION_RULES),
         "update_demo": {"base_version": upd["base_version"], "new_version": upd["new_version"],
                         "revised_label": config.corridor()["revision_demo"]["revised_label"],
                         "out_of_scope": upd["out_of_scope"], "new_in_scope": upd["new_in_scope"],
+                        "out_lots": [f"{r['lot_key']} ({r['interest_type'].replace('_', ' ')})" for r in upd["out_of_scope"]] or ["none"],
+                        "new_lots": [f"{r['lot_key']} ({r['interest_type'].replace('_', ' ')})" for r in upd["new_in_scope"]] or ["none"],
                         "n_out": len(upd["out_of_scope"]), "n_new": len(upd["new_in_scope"]),
                         "n_changed": len(upd["changed"]), "changed": upd["changed"],
                         "steps_to_review": upd["steps_to_review"], "n_steps_to_review": len(upd["steps_to_review"])},
