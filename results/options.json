@@ -1,0 +1,379 @@
+{
+  "best_or_tied_best_count": {
+    "A": 6,
+    "B": 4,
+    "C": 1
+  },
+  "best_or_tied_best_on": {
+    "A": [
+      "permanent_surface_not_state_m2",
+      "subterranean_not_state_m2",
+      "buildings_in_surface_take",
+      "buildings_above_tunnels",
+      "lots_within_protection_distance",
+      "length_m"
+    ],
+    "B": [
+      "permanent_surface_not_state_m2",
+      "subterranean_not_state_m2",
+      "lots_in_scope",
+      "length_m"
+    ],
+    "C": [
+      "buildings_in_surface_take"
+    ]
+  },
+  "criteria": [
+    {
+      "discriminates": true,
+      "key": "permanent_surface_not_state_m2",
+      "label": "Permanent surface take on lots not shown as State land (m2)",
+      "weight": 0.2
+    },
+    {
+      "discriminates": true,
+      "key": "subterranean_not_state_m2",
+      "label": "Tunnel stratum under lots not shown as State land (m2)",
+      "weight": 0.15
+    },
+    {
+      "discriminates": true,
+      "key": "lots_in_scope",
+      "label": "Lots with any land interest (count)",
+      "weight": 0.15
+    },
+    {
+      "discriminates": true,
+      "key": "buildings_in_surface_take",
+      "label": "Buildings inside boxes or worksites (count)",
+      "weight": 0.15
+    },
+    {
+      "discriminates": true,
+      "key": "buildings_above_tunnels",
+      "label": "Buildings above the tunnels (count)",
+      "weight": 0.15
+    },
+    {
+      "discriminates": true,
+      "key": "lots_within_protection_distance",
+      "label": "Lots within the 40 m protection distance of the structure (count)",
+      "weight": 0.1
+    },
+    {
+      "discriminates": true,
+      "key": "length_m",
+      "label": "Route length (m)",
+      "weight": 0.1
+    }
+  ],
+  "equal_weights": {
+    "ranking": [
+      "A",
+      "B",
+      "C"
+    ],
+    "total": {
+      "A": 0.971429,
+      "B": 0.679533,
+      "C": 0.142857
+    }
+  },
+  "leave_one_out": [
+    {
+      "criterion_removed": "permanent_surface_not_state_m2",
+      "ranking": [
+        "A",
+        "B",
+        "C"
+      ],
+      "winner": "A"
+    },
+    {
+      "criterion_removed": "subterranean_not_state_m2",
+      "ranking": [
+        "A",
+        "B",
+        "C"
+      ],
+      "winner": "A"
+    },
+    {
+      "criterion_removed": "lots_in_scope",
+      "ranking": [
+        "A",
+        "B",
+        "C"
+      ],
+      "winner": "A"
+    },
+    {
+      "criterion_removed": "buildings_in_surface_take",
+      "ranking": [
+        "A",
+        "B",
+        "C"
+      ],
+      "winner": "A"
+    },
+    {
+      "criterion_removed": "buildings_above_tunnels",
+      "ranking": [
+        "A",
+        "B",
+        "C"
+      ],
+      "winner": "A"
+    },
+    {
+      "criterion_removed": "lots_within_protection_distance",
+      "ranking": [
+        "A",
+        "B",
+        "C"
+      ],
+      "winner": "A"
+    },
+    {
+      "criterion_removed": "length_m",
+      "ranking": [
+        "A",
+        "B",
+        "C"
+      ],
+      "winner": "A"
+    }
+  ],
+  "leave_one_out_same_winner": 7,
+  "one_at_a_time": [
+    {
+      "criterion": "permanent_surface_not_state_m2",
+      "factor": 0.5,
+      "ranking": [
+        "A",
+        "B",
+        "C"
+      ],
+      "winner": "A"
+    },
+    {
+      "criterion": "permanent_surface_not_state_m2",
+      "factor": 1.5,
+      "ranking": [
+        "A",
+        "B",
+        "C"
+      ],
+      "winner": "A"
+    },
+    {
+      "criterion": "subterranean_not_state_m2",
+      "factor": 0.5,
+      "ranking": [
+        "A",
+        "B",
+        "C"
+      ],
+      "winner": "A"
+    },
+    {
+      "criterion": "subterranean_not_state_m2",
+      "factor": 1.5,
+      "ranking": [
+        "A",
+        "B",
+        "C"
+      ],
+      "winner": "A"
+    },
+    {
+      "criterion": "lots_in_scope",
+      "factor": 0.5,
+      "ranking": [
+        "A",
+        "B",
+        "C"
+      ],
+      "winner": "A"
+    },
+    {
+      "criterion": "lots_in_scope",
+      "factor": 1.5,
+      "ranking": [
+        "A",
+        "B",
+        "C"
+      ],
+      "winner": "A"
+    },
+    {
+      "criterion": "buildings_in_surface_take",
+      "factor": 0.5,
+      "ranking": [
+        "A",
+        "B",
+        "C"
+      ],
+      "winner": "A"
+    },
+    {
+      "criterion": "buildings_in_surface_take",
+      "factor": 1.5,
+      "ranking": [
+        "A",
+        "B",
+        "C"
+      ],
+      "winner": "A"
+    },
+    {
+      "criterion": "buildings_above_tunnels",
+      "factor": 0.5,
+      "ranking": [
+        "A",
+        "B",
+        "C"
+      ],
+      "winner": "A"
+    },
+    {
+      "criterion": "buildings_above_tunnels",
+      "factor": 1.5,
+      "ranking": [
+        "A",
+        "B",
+        "C"
+      ],
+      "winner": "A"
+    },
+    {
+      "criterion": "lots_within_protection_distance",
+      "factor": 0.5,
+      "ranking": [
+        "A",
+        "B",
+        "C"
+      ],
+      "winner": "A"
+    },
+    {
+      "criterion": "lots_within_protection_distance",
+      "factor": 1.5,
+      "ranking": [
+        "A",
+        "B",
+        "C"
+      ],
+      "winner": "A"
+    },
+    {
+      "criterion": "length_m",
+      "factor": 0.5,
+      "ranking": [
+        "A",
+        "B",
+        "C"
+      ],
+      "winner": "A"
+    },
+    {
+      "criterion": "length_m",
+      "factor": 1.5,
+      "ranking": [
+        "A",
+        "B",
+        "C"
+      ],
+      "winner": "A"
+    }
+  ],
+  "one_at_a_time_runs": 14,
+  "one_at_a_time_same_winner": 14,
+  "random_weights_first_share": {
+    "A": 0.996,
+    "B": 0.004,
+    "C": 0.0
+  },
+  "random_weights_n": 2000,
+  "ranking": [
+    "A",
+    "B",
+    "C"
+  ],
+  "raw": {
+    "A": {
+      "buildings_above_tunnels": 10.0,
+      "buildings_in_surface_take": 7.0,
+      "length_m": 1301.239793,
+      "lots_in_scope": 35.0,
+      "lots_within_protection_distance": 48.0,
+      "permanent_surface_not_state_m2": 6803.043322,
+      "subterranean_not_state_m2": 20105.129392
+    },
+    "B": {
+      "buildings_above_tunnels": 11.0,
+      "buildings_in_surface_take": 8.0,
+      "length_m": 1334.837164,
+      "lots_in_scope": 33.0,
+      "lots_within_protection_distance": 52.0,
+      "permanent_surface_not_state_m2": 6856.619937,
+      "subterranean_not_state_m2": 20402.35272
+    },
+    "C": {
+      "buildings_above_tunnels": 12.0,
+      "buildings_in_surface_take": 7.0,
+      "length_m": 1478.829929,
+      "lots_in_scope": 43.0,
+      "lots_within_protection_distance": 59.0,
+      "permanent_surface_not_state_m2": 7200.0,
+      "subterranean_not_state_m2": 25462.719666
+    }
+  },
+  "scores": {
+    "A": {
+      "buildings_above_tunnels": 1.0,
+      "buildings_in_surface_take": 1.0,
+      "length_m": 1.0,
+      "lots_in_scope": 0.8,
+      "lots_within_protection_distance": 1.0,
+      "permanent_surface_not_state_m2": 1.0,
+      "subterranean_not_state_m2": 1.0
+    },
+    "B": {
+      "buildings_above_tunnels": 0.5,
+      "buildings_in_surface_take": 0.0,
+      "length_m": 0.810815,
+      "lots_in_scope": 1.0,
+      "lots_within_protection_distance": 0.636364,
+      "permanent_surface_not_state_m2": 0.865032,
+      "subterranean_not_state_m2": 0.944523
+    },
+    "C": {
+      "buildings_above_tunnels": 0.0,
+      "buildings_in_surface_take": 1.0,
+      "length_m": 0.0,
+      "lots_in_scope": 0.0,
+      "lots_within_protection_distance": 0.0,
+      "permanent_surface_not_state_m2": 0.0,
+      "subterranean_not_state_m2": 0.0
+    }
+  },
+  "ties_within_tolerance": {
+    "ranking": [
+      "A",
+      "B",
+      "C"
+    ],
+    "tolerance": 0.05,
+    "total": {
+      "A": 0.97,
+      "B": 0.738636,
+      "C": 0.15
+    }
+  },
+  "total": {
+    "A": 0.97,
+    "B": 0.684403,
+    "C": 0.15
+  }
+}

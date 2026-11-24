@@ -102,7 +102,9 @@ def compare(summary: dict, cfg: dict) -> dict:
     rnd = random_weights(sc, sens["random_weights"]["n"], sens["random_weights"]["seed"])
     eq = weighted(sc, np.ones(len(crit)))
     tol = float(sens.get("tie_tolerance", 0.0))
-    tied = weighted(normalise(snap_ties(raw, tol)), w)
+    snapped = snap_ties(raw, tol)
+    tied = weighted(normalise(snapped), w)
+    best_on = {v: [c for c in raw.columns if snapped.loc[v, c] == snapped[c].min()] for v in raw.index}
     base_winner = rank(total)[0]
     return {
         "criteria": [{"key": c["key"], "label": c["label"], "weight": c["weight"],
@@ -114,6 +116,8 @@ def compare(summary: dict, cfg: dict) -> dict:
         "equal_weights": {"total": {v: float(eq[v]) for v in eq.index}, "ranking": rank(eq)},
         "ties_within_tolerance": {"tolerance": tol, "total": {v: float(tied[v]) for v in tied.index},
                                   "ranking": rank(tied)},
+        "best_or_tied_best_on": best_on,
+        "best_or_tied_best_count": {v: len(c) for v, c in best_on.items()},
         "one_at_a_time": oat,
         "one_at_a_time_same_winner": int(sum(1 for r in oat if r["winner"] == base_winner)),
         "one_at_a_time_runs": len(oat),
