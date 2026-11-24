@@ -1,0 +1,31 @@
+# Multi-criteria comparison of the ILLUSTRATIVE variants. Criteria, directions and weights are the
+# author's ASSUMPTIONS, chosen before the variants were scored; the sensitivity analysis shows how much
+# the ranking depends on them. Every criterion is "lower is better". No money: see README, "Why no costs".
+
+criteria:
+  - key: permanent_surface_not_state_m2
+    label: Permanent surface take on lots not shown as State land (m2)
+    weight: 0.20
+  - key: subterranean_not_state_m2
+    label: Tunnel stratum under lots not shown as State land (m2)
+    weight: 0.15
+  - key: lots_in_scope
+    label: Lots with any land interest (count)
+    weight: 0.15
+  - key: buildings_in_surface_take
+    label: Buildings inside boxes or worksites (count)
+    weight: 0.15
+  - key: buildings_above_tunnels
+    label: Buildings above the tunnels (count)
+    weight: 0.15
+  - key: lots_within_protection_distance
+    label: Lots within the 40 m protection distance of the structure (count)
+    weight: 0.10
+  - key: length_m
+    label: Route length (m)
+    weight: 0.10
+
+sensitivity:
+  one_at_a_time_factor: [0.5, 1.5]   # each weight in turn multiplied by these, then all weights renormalised
+  random_weights: {n: 2000, seed: 20261124}   # weights drawn uniformly from the simplex (Dirichlet with all alphas 1)
+  tie_tolerance: 0.05                 # values within 5 % of the best count as equal to the best in the tie variant

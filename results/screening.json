@@ -1,0 +1,599 @@
+{
+  "corridor_check": {
+    "A": {
+      "box_n_to_station_m": 14.233116,
+      "box_s_to_station_m": 51.290947,
+      "clearance_middle_to_mp_rail_m": 345.472636,
+      "end_trim_m": 300.0,
+      "extract_sufficient": true,
+      "interchange_ok": true,
+      "middle_to_extract_edge_m": 549.942833
+    },
+    "B": {
+      "box_n_to_station_m": 27.834005,
+      "box_s_to_station_m": 52.298694,
+      "clearance_middle_to_mp_rail_m": 330.805354,
+      "end_trim_m": 300.0,
+      "extract_sufficient": true,
+      "interchange_ok": true,
+      "middle_to_extract_edge_m": 505.768164
+    },
+    "C": {
+      "box_n_to_station_m": 18.004871,
+      "box_s_to_station_m": 52.528225,
+      "clearance_middle_to_mp_rail_m": 333.908951,
+      "end_trim_m": 300.0,
+      "extract_sufficient": true,
+      "interchange_ok": true,
+      "middle_to_extract_edge_m": 440.0
+    }
+  },
+  "parameters": {
+    "curve_radius_m": 300,
+    "default_subterranean_level_m_shd": -30.0,
+    "min_building_m2": 1.0,
+    "min_piece_m2": 1.0,
+    "state_land_share": 0.5,
+    "station_box": {
+      "length_m": 150,
+      "width_m": 24
+    },
+    "tunnel_crown_level_m_shd": -5.0,
+    "tunnel_invert_level_m_shd": -11.6,
+    "tunnel_outer_width_m": 21.6,
+    "worksite": {
+      "extra_length_m": 10,
+      "width_m": 40
+    },
+    "zone_distances_m": {
+      "first_reserve": 6.0,
+      "protection_zone": 40.0,
+      "railway_corridor": 40.0,
+      "safety_zone": 60.0
+    }
+  },
+  "variants": {
+    "A": {
+      "area_accounting_max_residual_m2": 0.0,
+      "area_outside_lots_m2": 0.0,
+      "buildings": {
+        "above_tunnels": 10,
+        "in_station_boxes": 2,
+        "in_surface_take": 7,
+        "in_worksites": 7,
+        "mp_any_in_surface_take": 5,
+        "mp_hdb_above_tunnels": 9,
+        "roof_structures_any": 1
+      },
+      "by_land_use_m2": {
+        "COMMERCIAL": {
+          "permanent_subterranean": 0.0,
+          "permanent_surface": 804.650193,
+          "temporary_surface": 7048.475142
+        },
+        "COMMERCIAL & RESIDENTIAL": {
+          "permanent_subterranean": 1842.868004,
+          "permanent_surface": 923.586188,
+          "temporary_surface": 3083.777788
+        },
+        "EDUCATIONAL INSTITUTION": {
+          "permanent_subterranean": 2746.391276,
+          "permanent_surface": 0.0,
+          "temporary_surface": 0.0
+        },
+        "OPEN SPACE": {
+          "permanent_subterranean": 0.0,
+          "permanent_surface": 1871.670291,
+          "temporary_surface": 67.666152
+        },
+        "PARK": {
+          "permanent_subterranean": 0.0,
+          "permanent_surface": 1155.835581,
+          "temporary_surface": 2643.019274
+        },
+        "RESERVE SITE": {
+          "permanent_subterranean": 806.298544,
+          "permanent_surface": 0.0,
+          "temporary_surface": 0.0
+        },
+        "RESIDENTIAL": {
+          "permanent_subterranean": 11295.158874,
+          "permanent_surface": 396.863349,
+          "temporary_surface": 959.370132
+        },
+        "RESIDENTIAL WITH COMMERCIAL AT 1ST STOREY": {
+          "permanent_subterranean": 1090.946629,
+          "permanent_surface": 0.0,
+          "temporary_surface": 0.0
+        },
+        "ROAD": {
+          "permanent_subterranean": 3845.116211,
+          "permanent_surface": 2047.30107,
+          "temporary_surface": 3197.610594
+        }
+      },
+      "by_state_land_indication_m2": {
+        "indicated": {
+          "permanent_subterranean": 1521.650146,
+          "permanent_surface": 396.863349,
+          "temporary_surface": 959.370132
+        },
+        "not_indicated": {
+          "permanent_subterranean": 20105.129392,
+          "permanent_surface": 6803.043322,
+          "temporary_surface": 16040.54895
+        }
+      },
+      "components": {
+        "A-BOX-N": {
+          "area_m2": 3600.0,
+          "take": "permanent_surface",
+          "type": "station_box"
+        },
+        "A-BOX-S": {
+          "area_m2": 3600.0,
+          "take": "permanent_surface",
+          "type": "station_box"
+        },
+        "A-TUN": {
+          "area_m2": 21626.779538,
+          "take": "permanent_subterranean",
+          "type": "bored_tunnel"
+        },
+        "A-WS-N": {
+          "area_m2": 6800.0,
+          "take": "temporary_surface",
+          "type": "worksite"
+        },
+        "A-WS-S": {
+          "area_m2": 10200.0,
+          "take": "temporary_surface",
+          "type": "worksite"
+        }
+      },
+      "curves": 0,
+      "existing_railway_interfaces": [
+        {
+          "component_id": "A-BOX-S",
+          "distance_to_rail_line_m": 80.9,
+          "distance_to_station_outline_m": 51.3,
+          "existing_railway_zone": "safety_zone"
+        },
+        {
+          "component_id": "A-BOX-N",
+          "distance_to_rail_line_m": 52.2,
+          "distance_to_station_outline_m": 14.2,
+          "existing_railway_zone": "protection_zone"
+        },
+        {
+          "component_id": "A-TUN",
+          "distance_to_rail_line_m": 200.5,
+          "distance_to_station_outline_m": 163.2,
+          "existing_railway_zone": "outside"
+        },
+        {
+          "component_id": "A-WS-S",
+          "distance_to_rail_line_m": 29.2,
+          "distance_to_station_outline_m": 24.7,
+          "existing_railway_zone": "protection_zone"
+        },
+        {
+          "component_id": "A-WS-N",
+          "distance_to_rail_line_m": 52.0,
+          "distance_to_station_outline_m": 2.9,
+          "existing_railway_zone": "first_reserve"
+        }
+      ],
+      "instruments_lots": {
+        "ACQ-STRATUM": 18,
+        "ACQ-SURFACE": 13,
+        "RAIL-ZONE": 57,
+        "STATE-STRATUM": 1,
+        "STATE-SURFACE": 1,
+        "TEMP-OCC": 14,
+        "TOL": 1
+      },
+      "label": "Direct",
+      "length_m": 1301.239793,
+      "slivers": {
+        "area_m2": 0.174247,
+        "count": 2
+      },
+      "tenure_evidence_lots": {
+        "State land (SLA open layer)": 1,
+        "Unknown": 22,
+        "Unknown: Master Plan park or open space": 5,
+        "Unknown: Master Plan road zone": 7
+      },
+      "totals": {
+        "lots_in_scope": 35,
+        "lots_permanent_surface": 14,
+        "lots_state_land_indicated_in_scope": 1,
+        "lots_subterranean": 19,
+        "lots_temporary": 15,
+        "permanent_subterranean_m2": 21626.779538,
+        "permanent_surface_m2": 7199.906671,
+        "permanent_surface_not_state_m2": 6803.043322,
+        "permanent_surface_residential_m2": 396.863349,
+        "subterranean_not_state_m2": 20105.129392,
+        "temporary_not_state_m2": 16040.54895,
+        "temporary_surface_m2": 16999.919082
+      },
+      "zones": {
+        "first_reserve": {
+          "area_m2": 16027.520391,
+          "lots_outside_footprint": 5
+        },
+        "protection_zone": {
+          "area_m2": 95046.926921,
+          "lots_outside_footprint": 16
+        },
+        "safety_zone": {
+          "area_m2": 59297.071953,
+          "lots_outside_footprint": 22
+        },
+        "within_protection_distance_lots": 48
+      }
+    },
+    "B": {
+      "area_accounting_max_residual_m2": 0.0,
+      "area_outside_lots_m2": 0.0,
+      "buildings": {
+        "above_tunnels": 11,
+        "in_station_boxes": 4,
+        "in_surface_take": 8,
+        "in_worksites": 6,
+        "mp_any_in_surface_take": 5,
+        "mp_hdb_above_tunnels": 10,
+        "roof_structures_any": 1
+      },
+      "by_land_use_m2": {
+        "COMMERCIAL": {
+          "permanent_subterranean": 0.0,
+          "permanent_surface": 872.497389,
+          "temporary_surface": 6048.399229
+        },
+        "COMMERCIAL & RESIDENTIAL": {
+          "permanent_subterranean": 6261.793087,
+          "permanent_surface": 1026.234327,
+          "temporary_surface": 3855.653674
+        },
+        "EDUCATIONAL INSTITUTION": {
+          "permanent_subterranean": 1632.935953,
+          "permanent_surface": 0.0,
+          "temporary_surface": 0.0
+        },
+        "OPEN SPACE": {
+          "permanent_subterranean": 0.0,
+          "permanent_surface": 1701.268285,
+          "temporary_surface": 295.947097
+        },
+        "PARK": {
+          "permanent_subterranean": 0.0,
+          "permanent_surface": 868.95868,
+          "temporary_surface": 2650.199781
+        },
+        "RESERVE SITE": {
+          "permanent_subterranean": 16.356444,
+          "permanent_surface": 0.0,
+          "temporary_surface": 0.0
+        },
+        "RESIDENTIAL": {
+          "permanent_subterranean": 10150.52264,
+          "permanent_surface": 343.380063,
+          "temporary_surface": 409.537329
+        },
+        "RESIDENTIAL WITH COMMERCIAL AT 1ST STOREY": {
+          "permanent_subterranean": 93.352528,
+          "permanent_surface": 0.0,
+          "temporary_surface": 0.0
+        },
+        "ROAD": {
+          "permanent_subterranean": 4196.523598,
+          "permanent_surface": 2387.661257,
+          "temporary_surface": 3740.26289
+        }
+      },
+      "by_state_land_indication_m2": {
+        "indicated": {
+          "permanent_subterranean": 1949.13153,
+          "permanent_surface": 343.380063,
+          "temporary_surface": 409.537329
+        },
+        "not_indicated": {
+          "permanent_subterranean": 20402.35272,
+          "permanent_surface": 6856.619937,
+          "temporary_surface": 16590.462671
+        }
+      },
+      "components": {
+        "B-BOX-N": {
+          "area_m2": 3600.0,
+          "take": "permanent_surface",
+          "type": "station_box"
+        },
+        "B-BOX-S": {
+          "area_m2": 3600.0,
+          "take": "permanent_surface",
+          "type": "station_box"
+        },
+        "B-TUN": {
+          "area_m2": 22352.481108,
+          "take": "permanent_subterranean",
+          "type": "bored_tunnel"
+        },
+        "B-WS-N": {
+          "area_m2": 6800.0,
+          "take": "temporary_surface",
+          "type": "worksite"
+        },
+        "B-WS-S": {
+          "area_m2": 10200.0,
+          "take": "temporary_surface",
+          "type": "worksite"
+        }
+      },
+      "curves": 1,
+      "existing_railway_interfaces": [
+        {
+          "component_id": "B-BOX-S",
+          "distance_to_rail_line_m": 74.6,
+          "distance_to_station_outline_m": 52.3,
+          "existing_railway_zone": "safety_zone"
+        },
+        {
+          "component_id": "B-BOX-N",
+          "distance_to_rail_line_m": 55.3,
+          "distance_to_station_outline_m": 27.8,
+          "existing_railway_zone": "protection_zone"
+        },
+        {
+          "component_id": "B-TUN",
+          "distance_to_rail_line_m": 196.3,
+          "distance_to_station_outline_m": 156.3,
+          "existing_railway_zone": "outside"
+        },
+        {
+          "component_id": "B-WS-S",
+          "distance_to_rail_line_m": 40.0,
+          "distance_to_station_outline_m": 37.7,
+          "existing_railway_zone": "protection_zone"
+        },
+        {
+          "component_id": "B-WS-N",
+          "distance_to_rail_line_m": 32.4,
+          "distance_to_station_outline_m": 0.0,
+          "existing_railway_zone": "first_reserve"
+        }
+      ],
+      "instruments_lots": {
+        "ACQ-STRATUM": 17,
+        "ACQ-SURFACE": 12,
+        "RAIL-ZONE": 65,
+        "STATE-STRATUM": 1,
+        "STATE-SURFACE": 1,
+        "TEMP-OCC": 14,
+        "TOL": 1
+      },
+      "label": "West, under the north-south road",
+      "length_m": 1334.837164,
+      "slivers": {
+        "area_m2": 0.996857,
+        "count": 1
+      },
+      "tenure_evidence_lots": {
+        "State land (SLA open layer)": 1,
+        "Unknown": 21,
+        "Unknown: Master Plan park or open space": 4,
+        "Unknown: Master Plan road zone": 7
+      },
+      "totals": {
+        "lots_in_scope": 33,
+        "lots_permanent_surface": 13,
+        "lots_state_land_indicated_in_scope": 1,
+        "lots_subterranean": 18,
+        "lots_temporary": 15,
+        "permanent_subterranean_m2": 22351.48425,
+        "permanent_surface_m2": 7200.0,
+        "permanent_surface_not_state_m2": 6856.619937,
+        "permanent_surface_residential_m2": 343.380063,
+        "subterranean_not_state_m2": 20402.35272,
+        "temporary_not_state_m2": 16590.462671,
+        "temporary_surface_m2": 17000.0
+      },
+      "zones": {
+        "first_reserve": {
+          "area_m2": 16430.85021,
+          "lots_outside_footprint": 4
+        },
+        "protection_zone": {
+          "area_m2": 97331.540469,
+          "lots_outside_footprint": 22
+        },
+        "safety_zone": {
+          "area_m2": 60640.638977,
+          "lots_outside_footprint": 30
+        },
+        "within_protection_distance_lots": 52
+      }
+    },
+    "C": {
+      "area_accounting_max_residual_m2": 0.0,
+      "area_outside_lots_m2": 0.0,
+      "buildings": {
+        "above_tunnels": 12,
+        "in_station_boxes": 4,
+        "in_surface_take": 7,
+        "in_worksites": 5,
+        "mp_any_in_surface_take": 4,
+        "mp_hdb_above_tunnels": 6,
+        "roof_structures_any": 1
+      },
+      "by_land_use_m2": {
+        "COMMERCIAL": {
+          "permanent_subterranean": 0.0,
+          "permanent_surface": 826.504235,
+          "temporary_surface": 5959.103257
+        },
+        "COMMERCIAL & RESIDENTIAL": {
+          "permanent_subterranean": 2128.967106,
+          "permanent_surface": 1036.604577,
+          "temporary_surface": 3877.092932
+        },
+        "EDUCATIONAL INSTITUTION": {
+          "permanent_subterranean": 5057.118897,
+          "permanent_surface": 0.0,
+          "temporary_surface": 0.0
+        },
+        "OPEN SPACE": {
+          "permanent_subterranean": 0.0,
+          "permanent_surface": 1736.891188,
+          "temporary_surface": 363.803811
+        },
+        "PARK": {
+          "permanent_subterranean": 0.0,
+          "permanent_surface": 0.0,
+          "temporary_surface": 847.238186
+        },
+        "PLACE OF WORSHIP": {
+          "permanent_subterranean": 143.731793,
+          "permanent_surface": 0.0,
+          "temporary_surface": 0.0
+        },
+        "RESERVE SITE": {
+          "permanent_subterranean": 137.789317,
+          "permanent_surface": 0.0,
+          "temporary_surface": 0.0
+        },
+        "RESIDENTIAL": {
+          "permanent_subterranean": 13824.35852,
+          "permanent_surface": 0.0,
+          "temporary_surface": 0.0
+        },
+        "RESIDENTIAL WITH COMMERCIAL AT 1ST STOREY": {
+          "permanent_subterranean": 19.430967,
+          "permanent_surface": 0.0,
+          "temporary_surface": 0.0
+        },
+        "ROAD": {
+          "permanent_subterranean": 4151.323066,
+          "permanent_surface": 3600.0,
+          "temporary_surface": 5952.761814
+        }
+      },
+      "by_state_land_indication_m2": {
+        "not_indicated": {
+          "permanent_subterranean": 25462.719666,
+          "permanent_surface": 7200.0,
+          "temporary_surface": 17000.0
+        }
+      },
+      "components": {
+        "C-BOX-N": {
+          "area_m2": 3600.0,
+          "take": "permanent_surface",
+          "type": "station_box"
+        },
+        "C-BOX-S": {
+          "area_m2": 3600.0,
+          "take": "permanent_surface",
+          "type": "station_box"
+        },
+        "C-TUN": {
+          "area_m2": 25462.719666,
+          "take": "permanent_subterranean",
+          "type": "bored_tunnel"
+        },
+        "C-WS-N": {
+          "area_m2": 6800.0,
+          "take": "temporary_surface",
+          "type": "worksite"
+        },
+        "C-WS-S": {
+          "area_m2": 10200.0,
+          "take": "temporary_surface",
+          "type": "worksite"
+        }
+      },
+      "curves": 3,
+      "existing_railway_interfaces": [
+        {
+          "component_id": "C-BOX-S",
+          "distance_to_rail_line_m": 74.8,
+          "distance_to_station_outline_m": 52.5,
+          "existing_railway_zone": "safety_zone"
+        },
+        {
+          "component_id": "C-BOX-N",
+          "distance_to_rail_line_m": 42.1,
+          "distance_to_station_outline_m": 18.0,
+          "existing_railway_zone": "protection_zone"
+        },
+        {
+          "component_id": "C-TUN",
+          "distance_to_rail_line_m": 186.2,
+          "distance_to_station_outline_m": 161.9,
+          "existing_railway_zone": "outside"
+        },
+        {
+          "component_id": "C-WS-S",
+          "distance_to_rail_line_m": 41.3,
+          "distance_to_station_outline_m": 38.8,
+          "existing_railway_zone": "protection_zone"
+        },
+        {
+          "component_id": "C-WS-N",
+          "distance_to_rail_line_m": 40.6,
+          "distance_to_station_outline_m": 20.7,
+          "existing_railway_zone": "protection_zone"
+        }
+      ],
+      "instruments_lots": {
+        "ACQ-STRATUM": 26,
+        "ACQ-SURFACE": 13,
+        "RAIL-ZONE": 76,
+        "TEMP-OCC": 16
+      },
+      "label": "East, under the eastern road",
+      "length_m": 1478.829929,
+      "slivers": {
+        "area_m2": 0.0,
+        "count": 0
+      },
+      "tenure_evidence_lots": {
+        "Unknown": 25,
+        "Unknown: Master Plan park or open space": 4,
+        "Unknown: Master Plan road zone": 14
+      },
+      "totals": {
+        "lots_in_scope": 43,
+        "lots_permanent_surface": 13,
+        "lots_state_land_indicated_in_scope": 0,
+        "lots_subterranean": 26,
+        "lots_temporary": 16,
+        "permanent_subterranean_m2": 25462.719666,
+        "permanent_surface_m2": 7200.0,
+        "permanent_surface_not_state_m2": 7200.0,
+        "permanent_surface_residential_m2": 0.0,
+        "subterranean_not_state_m2": 25462.719666,
+        "temporary_not_state_m2": 17000.0,
+        "temporary_surface_m2": 17000.0
+      },
+      "zones": {
+        "first_reserve": {
+          "area_m2": 18158.677849,
+          "lots_outside_footprint": 4
+        },
+        "protection_zone": {
+          "area_m2": 107123.003105,
+          "lots_outside_footprint": 19
+        },
+        "safety_zone": {
+          "area_m2": 66399.459903,
+          "lots_outside_footprint": 29
+        },
+        "within_protection_distance_lots": 59
+      }
+    }
+  }
+}
