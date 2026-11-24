@@ -1,0 +1,101 @@
+{
+  "briefing": {
+    "markdown": "docs/briefing_note.md",
+    "pages": 2,
+    "path": "outputs/briefing_note.pdf"
+  },
+  "dxf": {
+    "audit_errors": 0,
+    "entities_by_layer": {
+      "EXISTING_STATIONS": 2,
+      "IL1_A_ALIGNMENT": 1,
+      "IL1_A_BOX": 2,
+      "IL1_A_TUNNEL": 1,
+      "IL1_A_WORKSITE": 2,
+      "IL1_A_ZONE_06M": 1,
+      "IL1_A_ZONE_40M": 1,
+      "IL1_A_ZONE_60M": 1,
+      "IL1_B_ALIGNMENT": 1,
+      "IL1_B_BOX": 2,
+      "IL1_B_TUNNEL": 1,
+      "IL1_B_WORKSITE": 2,
+      "IL1_B_ZONE_06M": 1,
+      "IL1_B_ZONE_40M": 1,
+      "IL1_B_ZONE_60M": 1,
+      "IL1_C_ALIGNMENT": 1,
+      "IL1_C_BOX": 2,
+      "IL1_C_TUNNEL": 1,
+      "IL1_C_WORKSITE": 2,
+      "IL1_C_ZONE_06M": 1,
+      "IL1_C_ZONE_40M": 1,
+      "IL1_C_ZONE_60M": 1,
+      "LOTS_WITH_INTEREST": 60,
+      "LOT_KEYS": 60,
+      "NOTES": 4
+    },
+    "lots_with_interest": 60,
+    "opened_in_cad_software": false,
+    "path": "outputs/corridor_variants.dxf"
+  },
+  "figures": {
+    "comparison": {
+      "path": "figures/comparison.png"
+    },
+    "overview": {
+      "path": "figures/overview.png"
+    },
+    "takes": {
+      "path": "figures/takes_by_variant.png"
+    }
+  },
+  "schedule_xlsx": {
+    "path": "outputs/land_schedule.xlsx",
+    "schedules": {
+      "A": {
+        "first_row": 5,
+        "last_row": 62,
+        "rows": 58,
+        "total_row": 63
+      },
+      "B": {
+        "first_row": 5,
+        "last_row": 70,
+        "rows": 66,
+        "total_row": 71
+      },
+      "C": {
+        "first_row": 5,
+        "last_row": 81,
+        "rows": 77,
+        "total_row": 82
+      }
+    },
+    "sheets": [
+      "Read me",
+      "Summary",
+      "Schedule A",
+      "Schedule B",
+      "Schedule C",
+      "Sources"
+    ]
+  },
+  "webmap": {
+    "bytes": 1285625,
+    "geojson_layers": 15,
+    "layers": {
+      "A": {
+        "lots": 35,
+        "pieces": 48
+      },
+      "B": {
+        "lots": 33,
+        "pieces": 46
+      },
+      "C": {
+        "lots": 43,
+        "pieces": 55
+      }
+    },
+    "path": "outputs/webmap.html"
+  }
+}

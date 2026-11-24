@@ -7,7 +7,7 @@ recomputes the affected areas and interests, and reconciles them lot by lot:
   its steps not yet done become `withdrawn`; steps already done are kept and flagged
   `completed before revision: review`.
 - **New in scope**: new interests with every step `not_started`.
-- **Continuing** (same lot and take type): the area change is logged when it exceeds 1 square metre or the
+- **Continuing** (same lot and take type): the area change is logged when it exceeds {{landdb.area_tol_m2:.0f}} square metre or the
   instrument changes; progress already made is carried over to the new interest when the instrument is the
   same, and the old interest becomes `superseded`.
 - Every change is written to `change_log` with the version that caused it and the reason.

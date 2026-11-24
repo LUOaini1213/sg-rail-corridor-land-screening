@@ -21,6 +21,7 @@ from . import components as comp_mod
 from . import config, screening
 
 SCHEMA_VERSION = "1.0"
+AREA_TOL_M2 = 1.0   # area changes smaller than this are not logged as changes when an alignment is revised
 AS_OF = "2026-11-24"   # fixed date stamped on records so that rebuilding the database is reproducible
 TEMP_START, TEMP_END = date(2028, 1, 1), date(2030, 12, 31)   # SYNTHETIC occupation period for the demo
 
@@ -255,7 +256,7 @@ class LandDB:
 
     # -- alignment change ----------------------------------------------------------------------------
     def revise(self, base_version: str, new_version: str, variant: str, label: str, pis, res: dict,
-               attrs: pd.DataFrame, area_tol_m2: float = 1.0) -> dict:
+               attrs: pd.DataFrame, area_tol_m2: float = AREA_TOL_M2) -> dict:
         """Add a revised alignment and reconcile its interests with the base version.
 
         Lots only in the base: their interests are withdrawn (steps not done become 'withdrawn'; steps

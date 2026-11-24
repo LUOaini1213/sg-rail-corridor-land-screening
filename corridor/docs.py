@@ -179,6 +179,26 @@ def render(template: str, results: dict) -> str:
     return PLACEHOLDER.sub(lambda m: fmt(lookup(results, m.group(1)), m.group(2)), template)
 
 
+ALLOWED_LITERALS = [
+    r"\bIL-1\b", r"\b(?:19|20)\d\d(?:-\d\d-\d\d)?\b", r"\bSVY21\b", r"\bEPSG:3414\b", r"\bs\.\d+(?:\(\w+\))*",
+    r"\br\.\d+", r"\bF\d\d\b", r"\bR2013\b", r"\b(?:ODbL|v|version|Licence) ?1\.0\b", r"^#{1,3} \d+\. ",
+    r"\bV\d\d\b", r"\b[A-C]-v[12]\b", r"\bA4\b", r"\bLUOaini1213\b", r"\bSHA-256\b", r"\b[LMSTUD]\dc?\b",
+    r"\(1 = best\)", r"^\d+\. ",
+]
+
+
+def typed_numbers(template: str) -> list[str]:
+    """Digits in a template that do not come from a placeholder (so would not follow the results)."""
+    t = re.sub(r"```.*?```", " ", template, flags=re.S)
+    t = re.sub(r"<!--.*?-->", " ", t, flags=re.S)
+    t = PLACEHOLDER.sub(" ", t)
+    t = re.sub(r"`[^`]*`", " ", t)
+    t = re.sub(r"\]\([^)]*\)", "]", t)                       # link targets
+    for pat in ALLOWED_LITERALS:
+        t = re.sub(pat, " ", t, flags=re.M)
+    return re.findall(r"[^\s|]*\d[^\s|]*", t)
+
+
 def load_results() -> dict:
     out = {}
     for p in sorted(config.RESULTS.glob("*.json")):

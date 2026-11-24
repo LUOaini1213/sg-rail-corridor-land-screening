@@ -1,4 +1,5 @@
 {
+  "area_tol_m2": 1.0,
   "interests_by_version": {
     "A-v1": 105,
     "A-v2": 105,

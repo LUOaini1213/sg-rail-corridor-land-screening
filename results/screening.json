@@ -28,6 +28,99 @@
       "middle_to_extract_edge_m": 440.0
     }
   },
+  "headline": {
+    "area_residual_bound_m2": 1e-06,
+    "area_residual_max_m2": 0.0,
+    "best": "A",
+    "best_count": 6,
+    "best_label": "Direct",
+    "best_lots_permanent_surface": 14,
+    "best_random_share": 0.996,
+    "box_s": {
+      "A": {
+        "buildings": 2,
+        "lots": 8,
+        "zones": [
+          "Commercial",
+          "Commercial & residential",
+          "Open space"
+        ]
+      },
+      "B": {
+        "buildings": 4,
+        "lots": 7,
+        "zones": [
+          "Commercial",
+          "Commercial & residential",
+          "Open space"
+        ]
+      },
+      "C": {
+        "buildings": 4,
+        "lots": 7,
+        "zones": [
+          "Commercial",
+          "Commercial & residential",
+          "Open space"
+        ]
+      }
+    },
+    "box_s_buildings_range": [
+      2,
+      4
+    ],
+    "box_s_lots_range": [
+      7,
+      8
+    ],
+    "box_s_zones_all": [
+      "Commercial",
+      "Commercial & residential",
+      "Open space"
+    ],
+    "clearance_range": [
+      330.805354,
+      345.472636
+    ],
+    "components_in_first_reserve_of_existing_railway": {
+      "A": [
+        "A-WS-N"
+      ],
+      "B": [
+        "B-WS-N"
+      ],
+      "C": []
+    },
+    "first_reserve_components": [
+      "A-WS-N",
+      "B-WS-N"
+    ],
+    "last": "C",
+    "lots_any_variant": 60,
+    "lots_in_scope_range": [
+      33,
+      43
+    ],
+    "lots_state_any_variant": 1,
+    "lots_subterranean_range": [
+      18,
+      26
+    ],
+    "n_components_in_first_reserve": 2,
+    "n_criteria": 7,
+    "second": "B",
+    "stratum_not_state_range_m2": [
+      20105.129392,
+      25462.719666
+    ],
+    "surface_take_m2": 7199.906671,
+    "temporary_m2": 16999.919082,
+    "variants": [
+      "A",
+      "B",
+      "C"
+    ]
+  },
   "parameters": {
     "curve_radius_m": 300,
     "default_subterranean_level_m_shd": -30.0,

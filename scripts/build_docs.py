@@ -19,6 +19,8 @@ def documents() -> dict[Path, str]:
     out = {config.DOCS / "fact_sheet.md": docs.render_fact_sheet(),
            config.DOCS / "data_sources.md": docs.render_data_sources(results),
            config.DOCS / "schema.md": docs.render_schema(results)}
+    from corridor.outputs import briefing
+    out[config.DOCS / "briefing_note.md"] = briefing.render_markdown()
     readme_t = config.DOCS / "templates" / "README.md"
     if readme_t.exists():
         out[config.ROOT / "README.md"] = docs.render(readme_t.read_text(encoding="utf-8"), results)

@@ -40,7 +40,7 @@ def data_quality(study: dict) -> dict:
     xs = np.array([[box[0], box[1]], [box[2], box[3]], [(box[0] + box[2]) / 2, (box[1] + box[3]) / 2]])
     mp = study["mp_buildings"]
     osm = study["osm_buildings"]
-    return {
+    out = {
         "study_area_svy21": list(box),
         "study_area_km2": (box[2] - box[0]) * (box[3] - box[1]) / 1e6,
         "lots": {"count": int(len(lots)), "invalid": quality.invalid_geometries(lots),
@@ -62,6 +62,9 @@ def data_quality(study: dict) -> dict:
         "rail_lines": int(len(study["rail_lines"])),
         "crs_round_trip_max_error_m": quality.crs_round_trip_error_m(xs),
     }
+    err = out["crs_round_trip_max_error_m"]
+    out["crs_round_trip_bound_m"] = max(1e-6, 10.0 ** np.ceil(np.log10(max(err, 1e-12))))
+    return out
 
 
 def corridor_check(variants: dict, study: dict, end_trim_m: float = 300.0) -> dict:
@@ -88,6 +91,49 @@ def corridor_check(variants: dict, study: dict, end_trim_m: float = 300.0) -> di
                   "box_s_to_station_m": d_s, "box_n_to_station_m": d_n,
                   "interchange_ok": bool(d_s <= interchange_max and d_n <= interchange_max)}
     return out
+
+
+def headline(summary: dict, cmp: dict, full: dict) -> dict:
+    """Numbers the README and briefing quote in their text (not only in tables)."""
+    ks = list(summary)
+    lots_any, lots_state = set(), set()
+    for r in full.values():
+        s = r["schedule"]
+        lots_any |= set(s.loc[s["in_scope"], "LOT_KEY"])
+        lots_state |= set(s.loc[s["in_scope"] & s["state_land_indicated"], "LOT_KEY"])
+    best = cmp["ranking"][0]
+    box_s = {}
+    for k, r in full.items():
+        p = r["pieces"][r["pieces"]["component_id"] == f"{k}-BOX-S"]
+        a = r["schedule"].set_index("LOT_KEY")
+        box_s[k] = {"lots": int(p["LOT_KEY"].nunique()),
+                    "zones": sorted({str(a.loc[x, "land_use"]).capitalize() for x in p["LOT_KEY"]}),
+                    "buildings": int(r["buildings"].loc[r["buildings"]["component_id"] == f"{k}-BOX-S", "building_id"].nunique())}
+    iface = {k: [x["component_id"] for x in summary[k]["existing_railway_interfaces"] if x["existing_railway_zone"] == "first_reserve"]
+             for k in ks}
+    rng = lambda vals: [min(vals), max(vals)]
+    return {
+        "variants": ks, "best": best, "best_label": summary[best]["label"],
+        "second": cmp["ranking"][1], "last": cmp["ranking"][-1],
+        "best_random_share": cmp["random_weights_first_share"][best],
+        "best_count": cmp["best_or_tied_best_count"][best], "n_criteria": len(cmp["criteria"]),
+        "best_lots_permanent_surface": summary[best]["totals"]["lots_permanent_surface"],
+        "box_s_lots_range": rng([v["lots"] for v in box_s.values()]),
+        "box_s_buildings_range": rng([v["buildings"] for v in box_s.values()]),
+        "box_s_zones_all": sorted({z for v in box_s.values() for z in v["zones"]}),
+        "lots_subterranean_range": rng([summary[k]["totals"]["lots_subterranean"] for k in ks]),
+        "first_reserve_components": [c for k in ks for c in iface[k]] or ["none"],
+        "lots_any_variant": len(lots_any),
+        "lots_state_any_variant": len(lots_state),
+        "lots_in_scope_range": [min(summary[k]["totals"]["lots_in_scope"] for k in ks), max(summary[k]["totals"]["lots_in_scope"] for k in ks)],
+        "stratum_not_state_range_m2": [min(summary[k]["totals"]["subterranean_not_state_m2"] for k in ks),
+                                       max(summary[k]["totals"]["subterranean_not_state_m2"] for k in ks)],
+        "surface_take_m2": summary[best]["totals"]["permanent_surface_m2"],
+        "temporary_m2": summary[best]["totals"]["temporary_surface_m2"],
+        "box_s": box_s,
+        "components_in_first_reserve_of_existing_railway": iface,
+        "n_components_in_first_reserve": int(sum(len(v) for v in iface.values())),
+    }
 
 
 def build_landdb(full: dict, attrs: pd.DataFrame, study: dict) -> tuple[landdb.LandDB, dict]:
@@ -130,9 +176,22 @@ def run(write_outputs: bool = True) -> dict:
               "station_box": geo["station_box"], "worksite": geo["worksite"], "curve_radius_m": geo["curve_radius_m"],
               "min_piece_m2": screening.MIN_PIECE_M2, "min_building_m2": screening.MIN_BUILDING_M2,
               "state_land_share": screening.STATE_LAND_SHARE}
+    hl = headline(summary, cmp, full)
+    hl["clearance_range"] = [min(c["clearance_middle_to_mp_rail_m"] for c in check.values()),
+                             max(c["clearance_middle_to_mp_rail_m"] for c in check.values())]
+    hl["area_residual_max_m2"] = max(s["area_accounting_max_residual_m2"] for s in summary.values())
+    # smallest power of ten above the residual, but not below the 1e-6 m2 resolution of the results files
+    hl["area_residual_bound_m2"] = max(1e-6, 10.0 ** np.ceil(np.log10(max(hl["area_residual_max_m2"], 1e-12))))
+    facts = config.facts()["facts"]
+    write_json("facts", {"n_total": len(facts), "n_verified": sum(r["status"] == "VERIFIED" for r in facts),
+                         "n_unverified": sum(r["status"] != "VERIFIED" for r in facts),
+                         "temp_occupation_years": config.fact_value("F10"),
+                         "used_in_calculations": ["F10", "F12", "F13", "F14", "F15", "F21"]})
     write_json("data_quality", dq)
-    write_json("screening", {"parameters": params, "variants": summary, "corridor_check": check})
+    write_json("screening", {"parameters": params, "variants": summary, "corridor_check": check, "headline": hl})
     write_json("options", cmp)
+    from . import tables
+    tables.write_all(summary, cmp)
     sched = pd.concat([full[k]["schedule"] for k in full], ignore_index=True)
     sched.round(2).to_csv(config.RESULTS / "schedule.csv", index=False, lineterminator="\n")
     db, upd = build_landdb(full, attrs, study)
@@ -147,6 +206,7 @@ def run(write_outputs: bool = True) -> dict:
         "validation": {k: len(v) for k, v in val.items()},
         "validation_failures": int(sum(len(v) for v in val.values())),
         "n_rules": len(landdb.VALIDATION_RULES),
+        "area_tol_m2": landdb.AREA_TOL_M2,
         "update_demo": {"base_version": upd["base_version"], "new_version": upd["new_version"],
                         "revised_label": config.corridor()["revision_demo"]["revised_label"],
                         "out_of_scope": upd["out_of_scope"], "new_in_scope": upd["new_in_scope"],

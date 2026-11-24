@@ -6,6 +6,7 @@
     "mp_buildings": 255,
     "share": 0.929412
   },
+  "crs_round_trip_bound_m": 1e-06,
   "crs_round_trip_max_error_m": 0.0,
   "land_use": {
     "classes": 17,
