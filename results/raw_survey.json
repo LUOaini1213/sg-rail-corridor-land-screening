@@ -90,6 +90,7 @@
   "layers": {
     "cadastral_lots": 147491,
     "land_use_polygons": 113413,
+    "mp_building_type_stray_spaces": 145,
     "mp_building_types": {
       "H&MC": 63,
       "HDB": 13827,

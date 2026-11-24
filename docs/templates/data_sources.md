@@ -55,7 +55,8 @@ Cited as plain text, not linked (see the fact sheet for why).
 
 ## Quirks noticed in the sources
 
-- {{data_quality.mp_buildings.type_with_stray_spaces}} building records in the box carry a building type with a leading space (" HDB").
+- Island-wide, {{raw_survey.layers.mp_building_type_stray_spaces}} of the {{raw_survey.layers.mp_buildings:,}} URA building records carry a building type with a
+  leading space (" HDB"); the code strips it.
 - Island-wide, LTA's exit layer and URA's station layer name interchange stations differently ("X" against "X
   INTERCHANGE"): {{raw_survey.corridor_selection.exit_station_names_not_matched}} exit-layer station names had no exact match, which is why
   interchange stations were left out of the station-pair search.

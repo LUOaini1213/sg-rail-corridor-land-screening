@@ -65,6 +65,7 @@ def layers(raw: Path) -> dict:
     lots = pyogrio.read_info(raw / "sla_cadastral" / "sla_cadastral_land_parcel.geojson")["features"]
     lu = pyogrio.read_info(raw / "mp25_land_use" / "mp25_land_use_amended.geojson")["features"]
     return {"mp_building_types": {k: int(v) for k, v in b["BLDG_TYPE"].str.strip().value_counts().items()},
+            "mp_building_type_stray_spaces": int((b["BLDG_TYPE"] != b["BLDG_TYPE"].str.strip()).sum()),
             "mp_buildings": int(len(b)), "cadastral_lots": int(lots), "land_use_polygons": int(lu)}
 
 

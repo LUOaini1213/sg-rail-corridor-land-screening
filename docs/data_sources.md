@@ -80,7 +80,8 @@ Cited as plain text, not linked (see the fact sheet for why).
 
 ## Quirks noticed in the sources
 
-- 0 building records in the box carry a building type with a leading space (" HDB").
+- Island-wide, 145 of the 15,392 URA building records carry a building type with a
+  leading space (" HDB"); the code strips it.
 - Island-wide, LTA's exit layer and URA's station layer name interchange stations differently ("X" against "X
   INTERCHANGE"): 22 exit-layer station names had no exact match, which is why
   interchange stations were left out of the station-pair search.
